@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louis Eduplus Ltd | Empowering Minds, Transforming Learning</title>
+    <meta name="description" content="Revolutionizing global education by integrating innovation with timeless human and Christian values.">
+    
+    <!-- Tailwind CSS (Via CDN for pure HTML requirement) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Config for Brand Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            300: '#fde68a',
+                            400: '#fbbf24',
+                            500: '#d4af37', /* Main Metallic Gold */
+                            600: '#b45309',
+                            700: '#92400e',
+                        },
+                        navy: {
+                            800: '#1e293b',
+                            900: '#0f172a', /* Deep Brand Blue */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Animations */
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(to right, #fde68a, #d4af37, #fde68a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white">
+
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center hero-bg overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-navy-900/50 via-transparent to-navy-900/90 pointer-events-none"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <div class="inline-block mb-4 px-4 py-1 border border-gold-500/50 rounded-full bg-navy-900/50 backdrop-blur-sm fade-in-up">
+                <span class="text-gold-300 uppercase tracking-widest text-xs font-bold">Educational Consultancy</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight fade-in-up delay-100">
+                Empowering Minds, <br>
+                <span class="gold-gradient-text">Transforming Learning.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed fade-in-up delay-200 font-light">
+                Bridging the gap between academic excellence and moral integrity to inspire change for God’s glory.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in-up delay-300">
+                <a href="services.html" class="px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-bold text-sm uppercase tracking-widest rounded shadow-lg shadow-gold-500/20 hover:scale-105 transition-transform duration-300">
+                    Explore Our Services
+                </a>
+                <a href="contact.html" class="px-8 py-4 bg-transparent border border-white text-white font-bold text-sm uppercase tracking-widest rounded hover:bg-white hover:text-navy-900 transition-all duration-300">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-gold-400 text-xl"></i>
+        </div>
+    </section>
+
+    <!-- INTRO SECTION -->
+    <section class="py-20 md:py-32 bg-white relative overflow-hidden">
+        <!-- Decorative bg element -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gold-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="relative z-10 rounded-lg overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Teacher Mentoring Student" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <!-- Accent Box -->
+                    <div class="absolute -bottom-6 -right-6 w-2/3 h-2/3 border-2 border-gold-500 -z-0 rounded-lg"></div>
+                </div>
+                
+                <div class="space-y-6">
+                    <h4 class="text-gold-600 font-bold uppercase tracking-widest text-sm">Welcome to Louis Eduplus</h4>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-navy-900 leading-tight">Where Education <br>Meets Purpose.</h2>
+                    
+                    <p class="text-gray-600 leading-relaxed text-lg">
+                        In a rapidly changing world, education requires more than just textbooks; it requires a heart for transformation. At Louis Eduplus, we are revolutionizing global education by integrating innovation with timeless human and Christian values.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        We don’t just train teachers or design curricula—we partner with schools, churches, and parents to shape a generation of compassionate, skilled, and faith-rooted individuals.
+                    </p>
+                    
+                    <a href="about.html" class="inline-flex items-center text-navy-900 font-bold hover:text-gold-600 transition-colors mt-4 group">
+                        Read Our Story 
+                        <span class="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US (Dark Theme) -->
+    <section class="py-20 bg-navy-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Why Louis Eduplus?</h2>
+                <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-navy-800 p-8 rounded-lg border border-white/5 hover:border-gold-500/50 transition-colors group cursor-default">
+                    <div class="w-14 h-14 bg-gold-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors">
+                        <i class="fas fa-cross text-gold-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mb-3 text-white">Christ-Centred Philosophy</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Our programs are grounded in biblical truth, helping learners and leaders fulfill their God-given purpose.
+                    </p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-navy-800 p-8 rounded-lg border border-white/5 hover:border-gold-500/50 transition-colors group cursor-default">
+                    <div class="w-14 h-14 bg-gold-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors">
+                        <i class="fas fa-brain text-gold-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mb-3 text-white">Holistic Transformation</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        We nurture the mind, heart, and spirit—intellect alongside integrity for complete development.
+                    </p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-navy-800 p-8 rounded-lg border border-white/5 hover:border-gold-500/50 transition-colors group cursor-default">
+                    <div class="w-14 h-14 bg-gold-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors">
+                        <i class="fas fa-seedling text-gold-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold mb-3 text-white">Sustainable Impact</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        We build capacity that lasts, equipping you to grow in wisdom long after our work is done.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT AREAS -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-gold-600 font-bold uppercase tracking-widest text-sm">Our Reach</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-navy-900 mt-2">Impact Areas</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-xl overflow-hidden shadow-2xl">
+                <!-- Schools -->
+                <div class="relative group h-80 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-navy-900/80 group-hover:bg-navy-900/70 transition-colors flex flex-col justify-center items-center p-6 text-center">
+                        <h3 class="text-2xl font-serif font-bold text-white mb-2">For Schools</h3>
+                        <p class="text-gray-300 text-sm mb-4 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Strategic consultancy and curriculum reviews that align with faith and excellence.</p>
+                    </div>
+                </div>
+
+                <!-- Educators -->
+                <div class="relative group h-80 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gold-600/90 group-hover:bg-gold-600/80 transition-colors flex flex-col justify-center items-center p-6 text-center">
+                        <h3 class="text-2xl font-serif font-bold text-navy-900 mb-2">For Educators</h3>
+                        <p class="text-navy-900 text-sm mb-4 font-medium opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Professional development workshops that reignite passion and purpose.</p>
+                    </div>
+                </div>
+
+                <!-- Parents -->
+                <div class="relative group h-80 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-navy-900/80 group-hover:bg-navy-900/70 transition-colors flex flex-col justify-center items-center p-6 text-center">
+                        <h3 class="text-2xl font-serif font-bold text-white mb-2">For Parents</h3>
+                        <p class="text-gray-300 text-sm mb-4 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Tools to collaboratively nurture the spiritual and academic growth of your children.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-6">Ready to transform your educational journey?</h2>
+            <a href="contact.html" class="inline-block px-10 py-4 bg-navy-900 text-white font-bold text-sm uppercase tracking-widest rounded hover:bg-gold-500 hover:text-navy-900 transition-all duration-300 shadow-xl">
+                Get in Touch Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts for dynamic loading -->
+    <script>
+        // Load Header and Footer
+        function loadComponent(id, file) {
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) throw new Error("Network response was not ok");
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                    // Re-execute scripts in the injected content (nav logic)
+                    const scripts = document.getElementById(id).querySelectorAll("script");
+                    scripts.forEach(oldScript => {
+                        const newScript = document.createElement("script");
+                        Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                        newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                        oldScript.parentNode.replaceChild(newScript, oldScript);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading component:', error);
+                    // Fallback message for local testing without server
+                    if(window.location.protocol === 'file:') {
+                        document.getElementById(id).innerHTML = `<div class="p-4 bg-red-100 text-red-700 text-center">Note: Components cannot load via file:// protocol. Use a local server or GitHub Pages.</div>`;
+                    }
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('header-placeholder', 'header.html');
+            loadComponent('footer-placeholder', 'footer.html');
+        });
+    </script>
+</body>
+</html>

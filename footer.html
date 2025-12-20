@@ -1,0 +1,89 @@
+<!-- 
+  FOOTER COMPONENT 
+  This file is dynamically loaded into other pages.
+-->
+<footer class="bg-slate-900 text-gray-300 border-t border-white/10 relative overflow-hidden">
+    <!-- Decorative Gold Accent -->
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold-500 to-transparent opacity-50"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            
+            <!-- Brand Column -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2">
+                    <img src="logo.png" alt="Louis Eduplus Logo" class="h-10 w-auto object-contain bg-white/5 rounded p-1">
+                    <span class="font-serif text-xl font-bold text-white tracking-wide">LOUIS EDUPLUS</span>
+                </div>
+                <p class="text-sm leading-relaxed text-gray-400">
+                    Bridging the gap between academic excellence and moral integrity. Empowering minds, transforming learning, and inspiring change for God’s glory.
+                </p>
+                <div class="flex space-x-4 pt-2">
+                    <!-- Social Placeholders -->
+                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-gold-500 hover:text-slate-900 transition-all"><i class="fab fa-facebook-f text-xs"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-gold-500 hover:text-slate-900 transition-all"><i class="fab fa-linkedin-in text-xs"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-gold-500 hover:text-slate-900 transition-all"><i class="fab fa-twitter text-xs"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-white font-serif font-semibold mb-4 tracking-wider text-lg">Explore</h3>
+                <ul class="space-y-2">
+                    <li><a href="about.html" class="text-sm hover:text-gold-400 transition-colors flex items-center"><span class="mr-2 text-gold-500">›</span> About Us</a></li>
+                    <li><a href="services.html" class="text-sm hover:text-gold-400 transition-colors flex items-center"><span class="mr-2 text-gold-500">›</span> Our Services</a></li>
+                    <li><a href="books.html" class="text-sm hover:text-gold-400 transition-colors flex items-center"><span class="mr-2 text-gold-500">›</span> Books & Resources</a></li>
+                    <li><a href="contact.html" class="text-sm hover:text-gold-400 transition-colors flex items-center"><span class="mr-2 text-gold-500">›</span> Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-white font-serif font-semibold mb-4 tracking-wider text-lg">Contact</h3>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-gold-500"></i>
+                        <span>86–90 Paul Street,<br>London EC2A 4NE</span>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-envelope mr-3 text-gold-500"></i>
+                        <a href="mailto:info@louiseduplusltd.com" class="hover:text-gold-400">info@louiseduplusltd.com</a>
+                    </li>
+                    <li class="flex items-center">
+                        <i class="fas fa-phone mr-3 text-gold-500"></i>
+                        <a href="tel:+447784774950" class="hover:text-gold-400">+44 7784 774950</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Scripture -->
+            <div>
+                <h3 class="text-white font-serif font-semibold mb-4 tracking-wider text-lg">Our Foundation</h3>
+                <blockquote class="italic text-gray-400 text-sm border-l-2 border-gold-500 pl-4 py-1 my-2">
+                    “Unless the Lord builds the house, the builders labor in vain.”
+                </blockquote>
+                <p class="text-xs text-gold-400 mt-2 font-semibold">— Psalm 127:1</p>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-xs text-gray-500 text-center md:text-left">
+                &copy; <span id="year"></span> Louis Eduplus Ltd. All rights reserved.
+            </p>
+            
+            <!-- Adekani Credit -->
+            <div class="flex items-center gap-3">
+                <span class="text-xs text-gray-500">Website by</span>
+                <a href="https://adekani.com.ng" target="_blank" class="group flex items-center gap-2 transition-opacity hover:opacity-80">
+                    <span class="text-xs font-bold text-white group-hover:text-gold-400 transition-colors">Adekani</span>
+                    <img src="adekani.png" alt="Adekani" class="h-6 w-auto">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>

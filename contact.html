@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Louis Eduplus Ltd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 300: '#fde68a', 400: '#fbbf24', 500: '#d4af37', 600: '#b45309', 700: '#92400e' },
+                        navy: { 800: '#1e293b', 900: '#0f172a' }
+                    },
+                    fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-slate-800 font-sans antialiased">
+
+    <div id="header-placeholder"></div>
+
+    <!-- HEADER -->
+    <div class="bg-navy-900 pt-32 pb-16 text-center text-white relative">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4">Let’s Start a Conversation.</h1>
+        <p class="text-xl text-gray-300 font-light">Whether you need consultancy, training, or resources, we are here to serve you.</p>
+    </div>
+
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <!-- Contact Info -->
+            <div class="space-y-8 order-2 lg:order-1">
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-2xl font-serif font-bold text-navy-900 mb-6">Get in Touch</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-gold-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm text-gray-500 uppercase font-bold tracking-wide">Email</p>
+                                <a href="mailto:info@louiseduplusltd.com" class="text-lg text-navy-900 font-medium hover:text-gold-600">info@louiseduplusltd.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-gold-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm text-gray-500 uppercase font-bold tracking-wide">Phone</p>
+                                <a href="tel:+447784774950" class="text-lg text-navy-900 font-medium hover:text-gold-600">+44 7784 774950</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-gold-600"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm text-gray-500 uppercase font-bold tracking-wide">Office</p>
+                                <p class="text-lg text-navy-900 font-medium">Louis Eduplus Ltd.<br>86-90, Paul Street,<br>London EC2A 4NE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-navy-900 p-8 rounded-xl shadow-lg text-white text-center">
+                     <i class="fas fa-quote-left text-gold-500 text-3xl mb-4"></i>
+                     <p class="text-xl font-serif italic mb-4">"Unless the Lord builds the house, the builders labor in vain."</p>
+                     <p class="text-gold-400 font-bold">— Psalm 127:1</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white p-8 lg:p-10 rounded-xl shadow-lg border-t-4 border-gold-500 order-1 lg:order-2">
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-bold text-gray-700 mb-1">Your Name</label>
+                        <input type="text" id="name" required class="w-full px-4 py-3 rounded border-gray-300 bg-gray-50 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all" placeholder="John Doe">
+                    </div>
+
+                    <div>
+                        <label for="enquiryType" class="block text-sm font-bold text-gray-700 mb-1">Enquiry Type</label>
+                        <select id="enquiryType" class="w-full px-4 py-3 rounded border-gray-300 bg-gray-50 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all cursor-pointer">
+                            <option value="general">General Enquiry</option>
+                            <option value="books">Books & Resources</option>
+                            <option value="family">Family & Parenting</option>
+                            <option value="professional">Professional Services (Training, Consultancy)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="subject" class="block text-sm font-bold text-gray-700 mb-1">Subject</label>
+                        <input type="text" id="subject" required class="w-full px-4 py-3 rounded border-gray-300 bg-gray-50 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all" placeholder="How can we help?">
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-bold text-gray-700 mb-1">Message</label>
+                        <textarea id="message" rows="5" required class="w-full px-4 py-3 rounded border-gray-300 bg-gray-50 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all" placeholder="Tell us more..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-4 bg-navy-900 text-white font-bold text-sm uppercase tracking-widest rounded hover:bg-gold-500 hover:text-navy-900 transition-all duration-300 shadow-lg">
+                        Send Message
+                    </button>
+                    
+                    <p class="text-xs text-center text-gray-400 mt-4">This will open your default email client.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // Load Header/Footer
+        function loadComponent(id, file) {
+            fetch(file).then(r => r.text()).then(d => {
+                document.getElementById(id).innerHTML = d;
+                const scripts = document.getElementById(id).querySelectorAll("script");
+                scripts.forEach(old => {
+                    const n = document.createElement("script");
+                    Array.from(old.attributes).forEach(a => n.setAttribute(a.name, a.value));
+                    n.appendChild(document.createTextNode(old.innerHTML));
+                    old.parentNode.replaceChild(n, old);
+                });
+            }).catch(e => console.error(e));
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('header-placeholder', 'header.html');
+            loadComponent('footer-placeholder', 'footer.html');
+            
+            // Handle URL Parameters for Pre-selection
+            const urlParams = new URLSearchParams(window.location.search);
+            const type = urlParams.get('type');
+            if(type) {
+                const select = document.getElementById('enquiryType');
+                if(select) select.value = type;
+            }
+        });
+
+        // Contact Form Logic
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const enquiryType = document.getElementById('enquiryType').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Email Routing Logic
+            let emailTo = 'info@louiseduplusltd.com'; // Default
+            
+            if (enquiryType === 'family') {
+                emailTo = 'familyministry@louiseduplusltd.com';
+            } else if (enquiryType === 'professional') {
+                emailTo = 'directorlep@louiseduplusltd.com';
+            } else if (enquiryType === 'books') {
+                emailTo = 'info@louiseduplusltd.com';
+            }
+            
+            const finalSubject = encodeURIComponent(`[${enquiryType.toUpperCase()}] ${subject}`);
+            const finalBody = encodeURIComponent(`Name: ${name}\n\nMessage:\n${message}`);
+            
+            window.location.href = `mailto:${emailTo}?subject=${finalSubject}&body=${finalBody}`;
+        });
+    </script>
+</body>
+</html>

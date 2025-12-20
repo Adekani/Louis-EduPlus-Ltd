@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books & Resources | Louis Eduplus Ltd</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { 300: '#fde68a', 400: '#fbbf24', 500: '#d4af37', 600: '#b45309', 700: '#92400e' },
+                        navy: { 800: '#1e293b', 900: '#0f172a' }
+                    },
+                    fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-slate-800 font-sans antialiased">
+
+    <div id="header-placeholder"></div>
+
+    <div class="bg-navy-900 pt-32 pb-16 text-center text-white">
+        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4">Read. Learn. Grow.</h1>
+        <p class="text-xl text-gold-300 font-light">Thought leadership by Louis Odubanjo and Louis Eduplus Ltd.</p>
+    </div>
+
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16">
+            We believe in the power of the written word to extend mentorship beyond the classroom. Explore our latest publications designed to support teachers, school leaders, and parents.
+        </p>
+
+        <!-- Book 1 -->
+        <div class="flex flex-col md:flex-row gap-10 items-start mb-20 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+            <!-- Book Cover Placeholder -->
+            <div class="w-full md:w-1/3 flex-shrink-0">
+                <div class="aspect-[2/3] bg-gradient-to-br from-navy-800 to-navy-900 rounded-lg shadow-xl flex items-center justify-center relative overflow-hidden group">
+                    <img 
+                       src="ripples.jpg"
+                       alt="Ripples in Teacher Education book cover"
+                       class="absolute inset-0 w-full h-full object-cover"
+                   />
+                </div>
+            </div>
+            
+            <div class="flex-grow space-y-4">
+                <h2 class="text-3xl font-serif font-bold text-navy-900">Ripples in Teacher Education</h2>
+                <h3 class="text-lg text-gold-600 font-medium">Teaching for Global Relevance</h3>
+                
+                <p class="text-gray-600 leading-relaxed">
+                    Ripples in Teacher Education: Teaching for Global Relevance explores how educators can shape learning that resonates far beyond the classroom. This forward-looking volume examines the evolving demands of a rapidly interconnected world and provides practical pathways for preparing teachers to meet them. Through compelling insights, it highlights how inquiry-based learning, intercultural competence, and adaptable teaching practices create classrooms that empower students to think critically and act responsibly on global issues.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    The book emphasizes the importance of reflective practice, collaborative learning communities, and innovative pedagogies that nurture global citizenship. Ripples in Teacher Education invites educators, policymakers, and stakeholders to reimagine teacher preparation as a catalyst for meaningful, worldwide impact.
+                </p>
+                
+                <div class="pt-4">
+                    <a href="https://a.co/d/gX3ZA65" target="_blank" class="inline-flex items-center px-8 py-3 bg-gold-500 text-white font-bold rounded shadow-lg hover:bg-gold-600 transition-colors">
+                        <i class="fab fa-amazon mr-2"></i> Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="flex flex-col md:flex-row gap-10 items-start bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+            <!-- Book Cover Placeholder -->
+            <div class="w-full md:w-1/3 flex-shrink-0">
+                <div class="aspect-[2/3] bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg shadow-xl flex items-center justify-center relative overflow-hidden group">
+                     <img 
+                       src="comformix.jpg"
+                       alt="Ripples in Teacher Education book cover"
+                       class="absolute inset-0 w-full h-full object-cover"
+                   />
+                </div>
+            </div>
+            
+            <div class="flex-grow space-y-4">
+                <h2 class="text-3xl font-serif font-bold text-navy-900">ComforMIX</h2>
+                <h3 class="text-lg text-gold-600 font-medium">Where the Mixture Does Not Mix</h3>
+                
+                <p class="text-gray-600 leading-relaxed">
+                    In ComforMIX: Where the Mixture Does Not Mix, the school becomes more than a place of learning—it becomes a reflection of the world we are building together. Centred on a school community determined to live out its mission of inclusion and excellence, this insightful book explores what happens when the desire for unity meets the honest reality of difference.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Drawing from real educational experiences, ComforMIX speaks to teachers, school leaders, and parents alike. It challenges all who shape young minds to look beyond surface harmony and engage with the deeper work of understanding, respect, and authentic belonging.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Through its powerful storytelling and practical reflection, ComforMIX reminds us that true education—and true community—flourish not when every voice sounds the same, but when every voice is heard.
+                </p>
+                
+                <div class="pt-4">
+                    <a href="https://a.co/d/1T3QAEg" target="_blank" class="inline-flex items-center px-8 py-3 bg-gold-500 text-white font-bold rounded shadow-lg hover:bg-gold-600 transition-colors">
+                        <i class="fab fa-amazon mr-2"></i> Order Now
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        function loadComponent(id, file) {
+            fetch(file).then(r => r.text()).then(d => {
+                document.getElementById(id).innerHTML = d;
+                const scripts = document.getElementById(id).querySelectorAll("script");
+                scripts.forEach(old => {
+                    const n = document.createElement("script");
+                    Array.from(old.attributes).forEach(a => n.setAttribute(a.name, a.value));
+                    n.appendChild(document.createTextNode(old.innerHTML));
+                    old.parentNode.replaceChild(n, old);
+                });
+            }).catch(e => console.error(e));
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponent('header-placeholder', 'header.html');
+            loadComponent('footer-placeholder', 'footer.html');
+        });
+    </script>
+</body>
+</html>
