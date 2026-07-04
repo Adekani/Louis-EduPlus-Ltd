@@ -3,104 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Louis Eduplus Ltd</title>
+    <title>Our Services | Louis EduPlus Ltd</title>
+    <meta name="description" content="Explore our specialized services including teacher training, curriculum alignment, strategic consultancy, student mentorship, and parenting workshops.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        gold: { 300: '#fde68a', 400: '#fbbf24', 500: '#d4af37', 600: '#b45309', 700: '#92400e' },
-                        navy: { 800: '#1e293b', 900: '#0f172a' }
+                        brandNavy: { DEFAULT: '#1A4086', dark: '#0A1931', light: '#2E5CAE' },
+                        brandGold: { DEFAULT: '#D4AF37', highlight: '#F6E8BE', muted: '#B19147', shadow: '#7A5E23' },
+                        paper: '#FAF7F0'
                     },
-                    fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
                 }
             }
         }
     </script>
+    <style>
+        @view-transition { navigation: auto; }
+        .service-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        .service-card:hover { transform: translateY(-6px); }
+    </style>
 </head>
-<body class="bg-gray-50 text-slate-800 font-sans antialiased">
+<body class="bg-paper text-slate-800 font-sans antialiased selection:bg-brandGold selection:text-brandNavy-dark">
 
     <div id="header-placeholder"></div>
 
-    <!-- PAGE HERO -->
-    <div class="relative bg-navy-900 py-20 px-4 sm:px-6 lg:px-8 text-center text-white">
-        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4">Solutions for a Faith-Driven Future</h1>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light">Comprehensive educational services designed to equip, empower, and inspire.</p>
-    </div>
+    <!-- HEADER HERO -->
+    <header class="relative py-28 md:py-36 bg-gradient-to-br from-brandNavy-dark to-brandNavy text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+            <span class="text-brandGold uppercase font-bold tracking-widest text-xs">Transformational Frameworks</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold">Our Professional Services</h1>
+            <div class="w-16 h-1 bg-brandGold mx-auto mt-4"></div>
+        </div>
+    </header>
 
-    <!-- SERVICES GRID -->
-    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- DETAILED SERVICE GRID -->
+    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16 space-y-2">
+            <span class="text-brandNavy font-bold uppercase tracking-widest text-xs">Integrated Solutions</span>
+            <h2 class="text-3xl md:text-4xl font-serif font-bold text-brandNavy-dark">Strategic Services for Educational Institutions</h2>
+            <p class="text-slate-500 font-light max-w-lg mx-auto">
+                Bespoke development programs mapping cognitive mastery and value systems across every layer of educational operation.
+            </p>
+        </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Service 1 -->
-            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group flex flex-col h-full">
-                <div class="w-12 h-12 bg-navy-50 text-navy-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
-                    <i class="fas fa-chalkboard-teacher text-xl"></i>
+            <!-- Service main 1 -->
+            <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-md p-8 flex flex-col justify-between h-full hover:shadow-xl">
+                <div>
+                    <div class="w-14 h-14 bg-brandNavy/5 text-brandNavy rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-school-flag text-2xl text-brandNavy"></i>
+                    </div>
+                    <span class="text-[0.65rem] text-brandGold font-bold uppercase tracking-widest block mb-1">Foundations & Turnarounds</span>
+                    <h3 class="text-xl font-serif font-bold text-brandNavy-dark mb-4">School Establishment & Transformation</h3>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-6">
+                        From first blueprint to full turnaround, we guide founders launching new schools and lead the recovery of struggling institutions — structuring governance, curriculum, and culture around a single, sustainable vision.
+                    </p>
                 </div>
-                <h3 class="text-xl font-serif font-bold text-navy-900 mb-2">Teacher Training & CPD</h3>
-                <p class="text-gold-600 text-xs uppercase tracking-widest font-bold mb-4">Igniting passion</p>
-                <p class="text-gray-600 mb-6 flex-grow">We move beyond standard pedagogy to offer workshops that equip teachers spiritually and professionally. Covers classroom management, faith integration, and modern strategies.</p>
-                <a href="contact.html?type=professional" class="inline-block w-full text-center py-3 border border-navy-900 text-navy-900 font-bold text-sm uppercase rounded hover:bg-navy-900 hover:text-white transition-colors">Contact Us</a>
+                <div class="pt-6 border-t border-slate-50 mt-4">
+                    <a href="contact.html?type=school" class="block text-center py-3 border border-brandNavy text-brandNavy font-bold text-xs uppercase tracking-wider rounded hover:bg-brandNavy hover:text-white transition-all">
+                        Inquire for Proposal
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Service 1 -->
+            <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-md p-8 flex flex-col justify-between h-full hover:shadow-xl">
+                <div>
+                    <div class="w-14 h-14 bg-brandNavy/5 text-brandNavy rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-chalkboard-user text-2xl text-brandNavy"></i>
+                    </div>
+                    <span class="text-[0.65rem] text-brandGold font-bold uppercase tracking-widest block mb-1">Empowering Educators</span>
+                    <h3 class="text-xl font-serif font-bold text-brandNavy-dark mb-4">Teacher Training & CPD</h3>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-6">
+                        Moving past compliance templates. We host reflective workshops instructing educators in active inquiry design, global pedagogical standards, and value alignment.
+                    </p>
+                </div>
+                <div class="pt-6 border-t border-slate-50 mt-4">
+                    <a href="contact.html?type=professional" class="block text-center py-3 border border-brandNavy text-brandNavy font-bold text-xs uppercase tracking-wider rounded hover:bg-brandNavy hover:text-white transition-all">
+                        Inquire for Proposal
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Service 1b -->
+            <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-md p-8 flex flex-col justify-between h-full hover:shadow-xl">
+                <div>
+                    <div class="w-14 h-14 bg-brandNavy/5 text-brandNavy rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-puzzle-piece text-2xl text-brandNavy"></i>
+                    </div>
+                    <span class="text-[0.65rem] text-brandGold font-bold uppercase tracking-widest block mb-1">Access for Every Learner</span>
+                    <h3 class="text-xl font-serif font-bold text-brandNavy-dark mb-4">Inclusive Education Consultation</h3>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-6">
+                        Advisory support helping schools design classrooms, policies, and support systems that serve learners of every ability — so no child's potential is limited by how a system was built.
+                    </p>
+                </div>
+                <div class="pt-6 border-t border-slate-50 mt-4">
+                    <a href="contact.html?type=professional" class="block text-center py-3 border border-brandNavy text-brandNavy font-bold text-xs uppercase tracking-wider rounded hover:bg-brandNavy hover:text-white transition-all">
+                        Inquire for Proposal
+                    </a>
+                </div>
             </div>
 
             <!-- Service 2 -->
-            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group flex flex-col h-full">
-                <div class="w-12 h-12 bg-navy-50 text-navy-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
-                    <i class="fas fa-book-open text-xl"></i>
+            <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-md p-8 flex flex-col justify-between h-full hover:shadow-xl">
+                <div>
+                    <div class="w-14 h-14 bg-brandNavy/5 text-brandNavy rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-cubes text-2xl text-brandNavy"></i>
+                    </div>
+                    <span class="text-[0.65rem] text-brandGold font-bold uppercase tracking-widest block mb-1">Curriculum Innovation</span>
+                    <h3 class="text-xl font-serif font-bold text-brandNavy-dark mb-4">Curriculum Design</h3>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-6">
+                        Evaluating and implementing curriculum paths that integrate moral and Christian character development into rigorous academic schedules.
+                    </p>
                 </div>
-                <h3 class="text-xl font-serif font-bold text-navy-900 mb-2">Curriculum Design</h3>
-                <p class="text-gold-600 text-xs uppercase tracking-widest font-bold mb-4">Faith Integration</p>
-                <p class="text-gray-600 mb-6 flex-grow">We assist schools in reviewing and designing curricula that meet global 21st-century standards while seamlessly integrating moral and Christian values.</p>
-                <a href="contact.html?type=professional" class="inline-block w-full text-center py-3 border border-navy-900 text-navy-900 font-bold text-sm uppercase rounded hover:bg-navy-900 hover:text-white transition-colors">Contact Us</a>
+                <div class="pt-6 border-t border-slate-50 mt-4">
+                    <a href="contact.html?type=professional" class="block text-center py-3 border border-brandNavy text-brandNavy font-bold text-xs uppercase tracking-wider rounded hover:bg-brandNavy hover:text-white transition-all">
+                        Inquire for Proposal
+                    </a>
+                </div>
             </div>
 
             <!-- Service 3 -->
-            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group flex flex-col h-full">
-                <div class="w-12 h-12 bg-navy-50 text-navy-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
-                    <i class="fas fa-university text-xl"></i>
+            <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-md p-8 flex flex-col justify-between h-full hover:shadow-xl">
+                <div>
+                    <div class="w-14 h-14 bg-brandNavy/5 text-brandNavy rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-chess-knight text-2xl text-brandNavy"></i>
+                    </div>
+                    <span class="text-[0.65rem] text-brandGold font-bold uppercase tracking-widest block mb-1">Administrative Strategy</span>
+                    <h3 class="text-xl font-serif font-bold text-brandNavy-dark mb-4">School Consultancy</h3>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-6">
+                        Long-term operational alignment, policy audits, and leadership mentorship ensuring schools succeed as sustainable operations with high moral objectives.
+                    </p>
                 </div>
-                <h3 class="text-xl font-serif font-bold text-navy-900 mb-2">School Consultancy</h3>
-                <p class="text-gold-600 text-xs uppercase tracking-widest font-bold mb-4">Strategic Development</p>
-                <p class="text-gray-600 mb-6 flex-grow">Strategic planning, leadership support, and operational guidance to ensure your school thrives both as a business and a ministry.</p>
-                <a href="contact.html?type=professional" class="inline-block w-full text-center py-3 border border-navy-900 text-navy-900 font-bold text-sm uppercase rounded hover:bg-navy-900 hover:text-white transition-colors">Contact Us</a>
+                <div class="pt-6 border-t border-slate-50 mt-4">
+                    <a href="contact.html?type=professional" class="block text-center py-3 border border-brandNavy text-brandNavy font-bold text-xs uppercase tracking-wider rounded hover:bg-brandNavy hover:text-white transition-all">
+                        Inquire for Proposal
+                    </a>
+                </div>
             </div>
 
             <!-- Service 4 -->
-            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group flex flex-col h-full">
-                <div class="w-12 h-12 bg-navy-50 text-navy-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
-                    <i class="fas fa-user-graduate text-xl"></i>
+            <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-md p-8 flex flex-col justify-between h-full hover:shadow-xl">
+                <div>
+                    <div class="w-14 h-14 bg-brandNavy/5 text-brandNavy rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-users-viewfinder text-2xl text-brandNavy"></i>
+                    </div>
+                    <span class="text-[0.65rem] text-brandGold font-bold uppercase tracking-widest block mb-1">Mentoring Success</span>
+                    <h3 class="text-xl font-serif font-bold text-brandNavy-dark mb-4">Student Enrichment</h3>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-6">
+                        Targeted enrichment models prompting moral guidance, cognitive skills development, and worldview construction directly to learning teams.
+                    </p>
                 </div>
-                <h3 class="text-xl font-serif font-bold text-navy-900 mb-2">Student Enrichment</h3>
-                <p class="text-gold-600 text-xs uppercase tracking-widest font-bold mb-4">Mentorship</p>
-                <p class="text-gray-600 mb-6 flex-grow">Our mentorship programs focus on character formation, academic enrichment, and helping students navigate their studies with a Christian worldview.</p>
-                <a href="contact.html?type=family" class="inline-block w-full text-center py-3 border border-navy-900 text-navy-900 font-bold text-sm uppercase rounded hover:bg-navy-900 hover:text-white transition-colors">Contact Us</a>
+                <div class="pt-6 border-t border-slate-50 mt-4">
+                    <a href="contact.html?type=family" class="block text-center py-3 border border-brandNavy text-brandNavy font-bold text-xs uppercase tracking-wider rounded hover:bg-brandNavy hover:text-white transition-all">
+                        Inquire for Proposal
+                    </a>
+                </div>
             </div>
 
             <!-- Service 5 -->
-            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group flex flex-col h-full">
-                <div class="w-12 h-12 bg-navy-50 text-navy-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
-                    <i class="fas fa-users text-xl"></i>
+            <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-md p-8 flex flex-col justify-between h-full hover:shadow-xl">
+                <div>
+                    <div class="w-14 h-14 bg-brandNavy/5 text-[#1A4086] rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-house-chimney-user text-2xl text-brandNavy"></i>
+                    </div>
+                    <span class="text-[0.65rem] text-brandGold font-bold uppercase tracking-widest block mb-1">Generational Alliance</span>
+                    <h3 class="text-xl font-serif font-bold text-[#0A1931] mb-4">Parenting Workshops</h3>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-6">
+                        Equipping family systems to maintain sound mentoring frameworks that directly align with academic transformation programs.
+                    </p>
                 </div>
-                <h3 class="text-xl font-serif font-bold text-navy-900 mb-2">Parenting Workshops</h3>
-                <p class="text-gold-600 text-xs uppercase tracking-widest font-bold mb-4">Community</p>
-                <p class="text-gray-600 mb-6 flex-grow">We equip parents with the tools to support their children's holistic development, fostering a seamless connection between home and school values.</p>
-                <a href="contact.html?type=family" class="inline-block w-full text-center py-3 border border-navy-900 text-navy-900 font-bold text-sm uppercase rounded hover:bg-navy-900 hover:text-white transition-colors">Contact Us</a>
+                <div class="pt-6 border-t border-slate-50 mt-4">
+                    <a href="contact.html?type=family" class="block text-center py-3 border border-brandNavy text-brandNavy font-bold text-xs uppercase tracking-wider rounded hover:bg-brandNavy hover:text-white transition-all">
+                        Inquire for Proposal
+                    </a>
+                </div>
             </div>
 
             <!-- Service 6 -->
-            <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-2xl transition-all duration-300 border border-gray-100 group flex flex-col h-full">
-                <div class="w-12 h-12 bg-navy-50 text-navy-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-gold-500 group-hover:text-white transition-colors">
-                    <i class="fas fa-laptop-code text-xl"></i>
+            <div class="service-card bg-white rounded-2xl border border-slate-100 shadow-md p-8 flex flex-col justify-between h-full hover:shadow-xl">
+                <div>
+                    <div class="w-14 h-14 bg-brandNavy/5 text-brandNavy rounded-xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-book-atlas text-2xl text-brandNavy"></i>
+                    </div>
+                    <span class="text-[0.65rem] text-brandGold font-bold uppercase tracking-widest block mb-1">Publications & Tools</span>
+                    <h3 class="text-xl font-serif font-bold text-brandNavy-dark mb-4">Educational Resources</h3>
+                    <p class="text-slate-500 font-light text-sm leading-relaxed mb-6">
+                        Providing comprehensive handbooks, digital assessments, and curricular materials mapping transformation methodologies directly into school environments.
+                    </p>
                 </div>
-                <h3 class="text-xl font-serif font-bold text-navy-900 mb-2">Educational Resources</h3>
-                <p class="text-gold-600 text-xs uppercase tracking-widest font-bold mb-4">Digital Solutions</p>
-                <p class="text-gray-600 mb-6 flex-grow">From books to digital learning aids, we develop high-quality resources that support educators and learners in their pursuit of excellence.</p>
-                <a href="contact.html?type=general" class="inline-block w-full text-center py-3 border border-navy-900 text-navy-900 font-bold text-sm uppercase rounded hover:bg-navy-900 hover:text-white transition-colors">Contact Us</a>
+                <div class="pt-6 border-t border-slate-50 mt-4">
+                    <a href="contact.html?type=general" class="block text-center py-3 border border-brandNavy text-brandNavy font-bold text-xs uppercase tracking-wider rounded hover:bg-brandNavy hover:text-white transition-all">
+                        Inquire for Proposal
+                    </a>
+                </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- STRATEGIC STEWARDSHIP CTA -->
+    <section class="py-24 bg-gradient-to-br from-brandNavy-dark to-brandNavy text-center text-white relative overflow-hidden border-t-2 border-brandGold/20">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 space-y-6">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold">Constructing Custom Solutions for Global Relevance</h2>
+            <p class="text-[#FAF7F0]/80 font-light text-base md:text-lg max-w-xl mx-auto">
+                No school is identical. We compile customized strategies addressing your regional regulatory systems, community dynamics, and values.
+            </p>
+            <div class="pt-4">
+                <a href="contact.html?type=professional" class="inline-block px-10 py-4 bg-gradient-to-r from-[#D4AF37] to-[#B19147] text-brandNavy-dark font-bold text-xs uppercase tracking-widest rounded shadow-xl hover:shadow-[0_0_25px_rgba(212,175,55,0.4)]">
+                    Initiate Custom Proposal Request
+                </a>
+            </div>
         </div>
     </section>
 
