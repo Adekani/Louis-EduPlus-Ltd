@@ -3,108 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Louis Eduplus Ltd</title>
+    <title>About Us | Louis EduPlus Ltd</title>
+    <meta name="description" content="Discover our founder's story, academic backgrounds, deep commitment to values, and verified educational credentials.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        gold: { 300: '#fde68a', 400: '#fbbf24', 500: '#d4af37', 600: '#b45309', 700: '#92400e' },
-                        navy: { 800: '#1e293b', 900: '#0f172a' }
+                        brandNavy: { DEFAULT: '#1A4086', dark: '#0A1931', light: '#2E5CAE' },
+                        brandGold: { DEFAULT: '#D4AF37', highlight: '#F6E8BE', muted: '#B19147', shadow: '#7A5E23' },
+                        paper: '#FAF7F0'
                     },
-                    fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
                 }
             }
         }
     </script>
+    <style>
+        @view-transition { navigation: auto; }
+        .caption-card { backdrop-filter: blur(8px); }
+    </style>
 </head>
-<body class="bg-gray-50 text-slate-800 font-sans antialiased">
+<body class="bg-paper text-slate-800 font-sans antialiased selection:bg-brandGold selection:text-brandNavy-dark">
 
     <div id="header-placeholder"></div>
 
-    <!-- PAGE HERO -->
-    <header class="relative py-24 md:py-32 bg-navy-900 overflow-hidden">
-        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h1 class="text-4xl md:text-5xl font-serif font-bold text-white mb-4">Cultivating Excellence with Purpose</h1>
-            <div class="w-20 h-1 bg-gold-500 mx-auto"></div>
+    <!-- EDITORIAL PAGE HEADER -->
+    <header class="relative py-28 md:py-36 bg-gradient-to-br from-brandNavy-dark to-brandNavy text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+            <span class="text-brandGold uppercase font-bold tracking-widest text-xs">A Heart for Real Reform</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold">Cultivating Excellence with Purpose</h1>
+            <div class="w-16 h-1 bg-brandGold mx-auto mt-4"></div>
         </div>
     </header>
 
-    <!-- STORY & VISION -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center mb-16">
-                <h2 class="text-3xl font-serif font-bold text-navy-900 mb-6">Our Story & Vision</h2>
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    Louis Eduplus Ltd was born out of a desire to see education do more. We envisioned a world where the gap between learning and parenting is bridged, and where academic success does not come at the expense of moral character.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-                <!-- Vision -->
-                <div class="bg-gray-50 p-8 rounded-lg border-l-4 border-gold-500 shadow-sm">
-                    <h3 class="text-2xl font-serif font-bold text-navy-900 mb-4">Our Vision</h3>
-                    <p class="text-gray-600">
-                        To revolutionize global education by fostering innovation and integrating human and Christian values, creating a harmonious link between education and parenting to shape a generation of compassionate, skilled, and faith-rooted individuals.
+    <!-- DETAILED BIOGRAPHY -->
+    <section class="py-24 bg-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="space-y-8">
+                <span class="text-brandNavy font-bold uppercase tracking-widest text-xs">The Founder's Journey</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brandNavy-dark">Louis Odubanjo, M.Ed., MCCT</h2>
+                
+                <div class="prose prose-slate prose-lg max-w-none text-slate-600 font-light space-y-6 leading-relaxed">
+                    <p>
+                        At the heart of <strong>Louis EduPlus Ltd</strong> is the vision of Louis Odubanjo, an educational thinker, author, mentor, and advocate for transformative learning. Deeply passionate about restructuring the modern educational ecosystem, Louis has devoted his career to fostering pedagogy that moves beyond standardized "certificate mill" templates to engage the whole human person.
                     </p>
-                </div>
-
-                <!-- Mission -->
-                <div class="bg-gray-50 p-8 rounded-lg border-l-4 border-navy-900 shadow-sm">
-                    <h3 class="text-2xl font-serif font-bold text-navy-900 mb-4">Our Mission</h3>
-                    <p class="text-gray-600">
-                        We are dedicated to transforming education on a global scale. By promoting innovative practices and instilling core human and Christian values, we empower parents and educators to nurture well-rounded individuals. We believe that true success happens when academic excellence and moral integrity walk hand in hand.
+                    <p>
+                        With rigorous academic training from the renowned <strong>University of Ibadan</strong> alongside ongoing affiliations as a Member of the Chartered College of Teaching (MCCT), Louis has spearheaded reform frameworks within both regional African boundaries and international contexts. His core thesis maintains that when schools focus solely on raw performance grades, they fail to develop critical innovators who operate with sound ethical guidance.
+                    </p>
+                    <p>
+                        In addition to active consultancy, Louis continuously contributes to practice by mentoring the learning community of <strong>Lifeword Christian Academy</strong>. Through a synthesis of innovative pedagogy, parenting integration, and solid Christian tenets, Louis EduPlus Ltd aims to establish long-term transformation in how global institutions nurture future leadership.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CORE VALUES -->
-    <section class="py-20 bg-navy-900 text-white relative overflow-hidden">
-        <!-- Gold decoration -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-gold-500 rounded-full mix-blend-overlay filter blur-[100px] opacity-20"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16">
-                <span class="text-gold-400 font-bold uppercase tracking-widest text-sm">Our Foundation</span>
-                <h2 class="text-3xl md:text-4xl font-serif font-bold mt-2">Core Values</h2>
+    <!-- EDITORIAL PHOTO PROOF GALLERY -->
+    <section class="py-24 bg-paper relative border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-16 space-y-2">
+                <span class="text-brandNavy font-bold uppercase tracking-widest text-xs">Hands-on Accountability</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brandNavy-dark">Our Practical Footprint</h2>
+                <p class="text-slate-500 font-light max-w-xl mx-auto">
+                    A visual narrative of our continuous engagement with schools, learning communities, and educators globally.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-star text-gold-400 text-2xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Proof Photo 1 -->
+                <div class="bg-white p-3 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div class="aspect-square relative rounded-xl overflow-hidden bg-brandNavy-dark mb-4">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4 bg-gradient-to-br from-[#1A4086]/20 to-[#D4AF37]/20 text-[#FAF7F0]">
+                            <i class="fa-solid fa-school-flag text-2xl mb-2 text-brandGold"></i>
+                            <span class="text-[0.65rem] font-bold uppercase tracking-wider text-brandGold-highlight">Oasis Academy Visit</span>
+                            <span class="text-[0.55rem] mt-1 opacity-70 font-light leading-tight">Staff training & strategic consultation program</span>
+                        </div>
+                        <img src="louis-oasis-academy.jpg" alt="Second Consulting Visit to Oasis Academy"
+                             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+                             style="opacity:0;" onload="this.style.opacity='1';" onerror="this.style.opacity='0';">
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Excellence with Purpose</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        We pursue high standards as a reflection of God’s nature. Every resource and training session we provide is designed to unlock the God-given potential in every learner.
+                    <div class="px-2 pb-2">
+                        <h4 class="font-serif font-bold text-brandNavy-dark text-sm">Oasis Academy</h4>
+                        <p class="text-xs text-slate-500 font-light mt-1">Staff-room design workshop and ongoing curriculum alignment audit.</p>
+                    </div>
+                </div>
+
+                <!-- Proof Photo 2 -->
+                <div class="bg-white p-3 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div class="aspect-square relative rounded-xl overflow-hidden bg-brandNavy-dark mb-4">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4 bg-gradient-to-br from-[#1A4086]/20 to-[#D4AF37]/20 text-[#FAF7F0]">
+                            <i class="fa-solid fa-person-chalkboard text-2xl mb-2 text-brandGold"></i>
+                            <span class="text-[0.65rem] font-bold uppercase tracking-wider text-brandGold-highlight">Bristol Workshop</span>
+                            <span class="text-[0.55rem] mt-1 opacity-70 font-light leading-tight">Shared learning discussion with international colleagues</span>
+                        </div>
+                        <img src="louis-bristol-workshop.jpg" alt="Colleagues dialogue following Bristol workshop session"
+                             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+                             style="opacity:0;" onload="this.style.opacity='1';" onerror="this.style.opacity='0';">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="font-serif font-bold text-brandNavy-dark text-sm">Bristol, UK</h4>
+                        <p class="text-xs text-slate-500 font-light mt-1">Strategic educational panels addressing contemporary cross-cultural practice.</p>
+                    </div>
+                </div>
+
+                <!-- Proof Photo 3 -->
+                <div class="bg-white p-3 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div class="aspect-square relative rounded-xl overflow-hidden bg-brandNavy-dark mb-4">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4 bg-gradient-to-br from-[#1A4086]/20 to-[#D4AF37]/20 text-[#FAF7F0]">
+                            <i class="fa-solid fa-child-reaching text-2xl mb-2 text-brandGold"></i>
+                            <span class="text-[0.65rem] font-bold uppercase tracking-wider text-brandGold-highlight">Lifeword Community</span>
+                            <span class="text-[0.55rem] mt-1 opacity-70 font-light leading-tight">Mentorship interaction with primary learning groups</span>
+                        </div>
+                        <img src="lifeword-academy-children.jpg" alt="Learning Community of Lifeword Christian Academy"
+                             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+                             style="opacity:0;" onload="this.style.opacity='1';" onerror="this.style.opacity='0';">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="font-serif font-bold text-brandNavy-dark text-sm">Lifeword Academy</h4>
+                        <p class="text-xs text-slate-500 font-light mt-1">Hands-on student engagement verifying practical educational tools in real classrooms.</p>
+                    </div>
+                </div>
+
+                <!-- Proof Photo 4 -->
+                <div class="bg-white p-3 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                    <div class="aspect-square relative rounded-xl overflow-hidden bg-brandNavy-dark mb-4">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4 bg-gradient-to-br from-[#1A4086]/20 to-[#D4AF37]/20 text-[#FAF7F0]">
+                            <i class="fa-solid fa-smile-wink text-2xl mb-2 text-brandGold"></i>
+                            <span class="text-[0.65rem] font-bold uppercase tracking-wider text-brandGold-highlight">Community Integration</span>
+                            <span class="text-[0.55rem] mt-1 opacity-70 font-light leading-tight">Generational dialogue with student representatives</span>
+                        </div>
+                        <img src="louis-children-selfie.jpg" alt="Informal community moment with academy children"
+                             class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+                             style="opacity:0;" onload="this.style.opacity='1';" onerror="this.style.opacity='0';">
+                    </div>
+                    <div class="px-2 pb-2">
+                        <h4 class="font-serif font-bold text-brandNavy-dark text-sm">Mentoring Impact</h4>
+                        <p class="text-xs text-slate-500 font-light mt-1">Bridging traditional generational distance via real human and pedagogical dialogue.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE VALUES -->
+    <section class="py-24 bg-gradient-to-br from-brandNavy-dark to-[#091c38] text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 space-y-2">
+                <span class="text-brandGold uppercase font-bold tracking-widest text-xs">Our Unwavering Standards</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold">The Core Foundational Pillars</h2>
+                <div class="w-16 h-1 bg-brandGold mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                
+                <!-- Pillar 1 -->
+                <div class="space-y-4 p-6 hover:bg-white/5 rounded-2xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-white/5 border border-brandGold/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-award text-brandGold text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-serif font-bold">Excellence with Purpose</h3>
+                    <p class="text-[#FAF7F0]/75 font-light text-sm leading-relaxed">
+                        We view academic rigor and critical reasoning as natural pathways to expressing the complexity of God's creation. True achievement exists to serve society and fulfill high calling.
                     </p>
                 </div>
 
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-shield-alt text-gold-400 text-2xl"></i>
+                <!-- Pillar 2 -->
+                <div class="space-y-4 p-6 hover:bg-white/5 rounded-2xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-white/5 border border-brandGold/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-user-shield text-brandGold text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Integrity and Faithfulness</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        We operate with transparency and deep accountability to God. In our partnerships and services, building trust is paramount.
+                    <h3 class="text-xl font-serif font-bold">Integrity & Faithfulness</h3>
+                    <p class="text-[#FAF7F0]/75 font-light text-sm leading-relaxed">
+                        Transparent institutional operations, clear accountability metrics, and truthfulness undergird all consultancy procedures and leadership dialogue.
                     </p>
                 </div>
 
-                <div class="text-center p-6">
-                    <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-lightbulb text-gold-400 text-2xl"></i>
+                <!-- Pillar 3 -->
+                <div class="space-y-4 p-6 hover:bg-white/5 rounded-2xl transition-all duration-300">
+                    <div class="w-16 h-16 bg-white/5 border border-brandGold/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-seedling text-brandGold text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Innovation for Kingdom Impact</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        We use creativity to advance God’s Kingdom. We blend forward-thinking educational strategies with biblical truth to make a lasting impact on communities.
+                    <h3 class="text-xl font-serif font-bold">Innovation for Kingdom Impact</h3>
+                    <p class="text-[#FAF7F0]/75 font-light text-sm leading-relaxed">
+                        Embracing active technological, pedagogical, and conceptual innovation to advance communities, transform traditional schools, and optimize curriculum efficacy.
                     </p>
                 </div>
+
             </div>
         </div>
     </section>
