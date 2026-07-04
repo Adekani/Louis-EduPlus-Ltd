@@ -3,115 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Louis Eduplus Ltd</title>
+    <title>Contact Us | Louis EduPlus Ltd</title>
+    <meta name="description" content="Inquire about our premium teacher training programs, curriculum reviews, or general administrative consultancy. Dual office structures in UK & Nigeria.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link class="fallback-logo" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        gold: { 300: '#fde68a', 400: '#fbbf24', 500: '#d4af37', 600: '#b45309', 700: '#92400e' },
-                        navy: { 800: '#1e293b', 900: '#0f172a' }
+                        brandNavy: { DEFAULT: '#1A4086', dark: '#0A1931', light: '#2E5CAE' },
+                        brandGold: { DEFAULT: '#D4AF37', highlight: '#F6E8BE', muted: '#B19147', shadow: '#7A5E23' },
+                        paper: '#FAF7F0'
                     },
-                    fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
                 }
             }
         }
     </script>
+    <style>
+        @view-transition { navigation: auto; }
+        .gold-glow { box-shadow: 0 4px 30px rgba(212, 175, 55, 0.1); }
+    </style>
 </head>
-<body class="bg-gray-50 text-slate-800 font-sans antialiased">
+<body class="bg-paper text-slate-800 font-sans antialiased selection:bg-brandGold selection:text-brandNavy-dark">
 
     <div id="header-placeholder"></div>
 
-    <!-- HEADER -->
-    <div class="bg-navy-900 pt-32 pb-16 text-center text-white relative">
-        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4">Let’s Start a Conversation.</h1>
-        <p class="text-xl text-gray-300 font-light">Whether you need consultancy, training, or resources, we are here to serve you.</p>
-    </div>
+    <!-- HEADER HERO -->
+    <header class="relative py-28 md:py-36 bg-gradient-to-br from-brandNavy-dark to-brandNavy text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+            <span class="text-brandGold uppercase font-bold tracking-widest text-xs">Consultancy Pathways</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold">Let’s Start a Conversation</h1>
+            <div class="w-16 h-1 bg-brandGold mx-auto mt-4"></div>
+        </div>
+    </header>
 
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
             
-            <!-- Contact Info -->
+            <!-- Contact Context & Info Panel -->
             <div class="space-y-8 order-2 lg:order-1">
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
-                    <h3 class="text-2xl font-serif font-bold text-navy-900 mb-6">Get in Touch</h3>
+                <div class="bg-white p-8 md:p-12 rounded-3xl border border-slate-100 shadow-xl space-y-8 relative">
+                    <div class="absolute top-0 left-0 w-1.5 h-full bg-[#D4AF37]"></div>
                     
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-envelope text-gold-600"></i>
+                    <div>
+                        <span class="text-brandNavy font-bold uppercase tracking-widest text-xs">Direct Verification</span>
+                        <h3 class="text-2xl font-serif font-bold text-brandNavy-dark mt-1">Global Consultative Offices</h3>
+                    </div>
+                    
+                    <div class="space-y-6 font-light">
+                        
+                        <!-- Office UK -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-brandGold/10 rounded-xl flex items-center justify-center text-brandGold flex-shrink-0">
+                                <i class="fa-solid fa-building-flag text-lg"></i>
                             </div>
-                            <div class="ml-4">
-                                <p class="text-sm text-gray-500 uppercase font-bold tracking-wide">Email</p>
-                                <a href="mailto:info@louiseduplusltd.com" class="text-lg text-navy-900 font-medium hover:text-gold-600">info@louiseduplusltd.com</a>
+                            <div>
+                                <span class="text-xs uppercase font-bold text-slate-400 tracking-wider">United Kingdom Registry</span>
+                                <h4 class="text-base font-serif font-bold text-brandNavy-dark mt-0.5">Louis EduPlus Ltd.</h4>
+                                <p class="text-sm text-slate-500 mt-1 leading-relaxed">
+                                    86–90, Paul Street, London EC2A 4NE
+                                </p>
                             </div>
                         </div>
 
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-phone text-gold-600"></i>
+                        <!-- Office Nigeria -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-brandGold/10 rounded-xl flex items-center justify-center text-brandGold flex-shrink-0">
+                                <i class="fa-solid fa-location-dot text-lg"></i>
                             </div>
-                            <div class="ml-4">
-                                <p class="text-sm text-gray-500 uppercase font-bold tracking-wide">Phone</p>
-                                <a href="tel:+447784774950" class="text-lg text-navy-900 font-medium hover:text-gold-600">+44 7784 774950</a>
+                            <div>
+                                <span class="text-xs uppercase font-bold text-slate-400 tracking-wider">Nigeria Regional Hub</span>
+                                <h4 class="text-base font-serif font-bold text-brandNavy-dark mt-0.5">Louis EduPlus Ltd.</h4>
+                                <p class="text-sm text-slate-500 mt-1 leading-relaxed">
+                                    Plot 6, Block G, Oyesina Layout, Felele, Challenge, Ibadan, Oyo State
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- P. O. Box Address-->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-brandGold/10 rounded-xl flex items-center justify-center text-brandGold flex-shrink-0">
+                                <i class="fa-solid fa-inbox text-lg"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs uppercase font-bold text-slate-400 tracking-wider">P. O. Box Address</span>
+                                <p class="text-sm text-slate-500 mt-1 leading-relaxed">
+                                   P. O. Box 40972, Dugbe, Ibadan, Oyo State, Nigeria
+                                </p>
                             </div>
                         </div>
 
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-10 h-10 bg-gold-100 rounded-full flex items-center justify-center">
-                                <i class="fas fa-map-marker-alt text-gold-600"></i>
+                        <!-- General Contact -->
+                        <div class="flex items-start gap-4 pt-4 border-t border-slate-100">
+                            <div class="w-10 h-10 bg-brandGold/10 rounded-xl flex items-center justify-center text-brandGold flex-shrink-0">
+                                <i class="fa-solid fa-headset text-lg"></i>
                             </div>
-                            <div class="ml-4">
-                                <p class="text-sm text-gray-500 uppercase font-bold tracking-wide">Office</p>
-                                <p class="text-lg text-navy-900 font-medium">Louis Eduplus Ltd.<br>86-90, Paul Street,<br>London EC2A 4NE</p>
+                            <div>
+                                <span class="text-xs uppercase font-bold text-slate-400 tracking-wider">General Inquiries</span>
+                                <p class="text-sm text-slate-500 mt-1">
+                                    Tel: <a href="tel:+447784774950" class="text-brandNavy font-semibold hover:text-brandGold transition-all">+44 7784 774950</a> <br>
+                                    Email: <a href="mailto:info@louiseduplusltd.com" class="text-brandNavy font-semibold hover:text-brandGold transition-all">info@louiseduplusltd.com</a>
+                                </p>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
-                <div class="bg-navy-900 p-8 rounded-xl shadow-lg text-white text-center">
-                     <i class="fas fa-quote-left text-gold-500 text-3xl mb-4"></i>
-                     <p class="text-xl font-serif italic mb-4">"Unless the Lord builds the house, the builders labor in vain."</p>
-                     <p class="text-gold-400 font-bold">— Psalm 127:1</p>
+                <!-- Elegant scripture panel -->
+                <div class="bg-gradient-to-br from-[#0d1c34] to-[#050a12] text-white p-8 rounded-3xl border border-brandGold/20 shadow-xl relative overflow-hidden">
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-brandGold/5 rounded-full blur-2xl"></div>
+                    <i class="fas fa-quote-left text-brandGold/20 text-4xl mb-4"></i>
+                    <p class="text-lg font-serif italic text-slate-300 font-light leading-relaxed">
+                        "Unless the Lord builds the house, the builders labor in vain."
+                    </p>
+                    <p class="text-brandGold font-bold tracking-wider text-xs uppercase mt-4">— Psalm 127:1</p>
                 </div>
             </div>
 
-            <!-- Contact Form -->
-            <div class="bg-white p-8 lg:p-10 rounded-xl shadow-lg border-t-4 border-gold-500 order-1 lg:order-2">
+            <!-- Redesigned form with Mailto Routing Logic -->
+            <div class="bg-white rounded-3xl border border-slate-100 shadow-xl p-8 md:p-12 relative order-1 lg:order-2 border-t-4 border-brandGold gold-glow">
+                <div class="space-y-2 mb-8">
+                    <span class="text-brandNavy font-bold uppercase tracking-widest text-xs">Institutional Pathway</span>
+                    <h3 class="text-2xl font-serif font-bold text-brandNavy-dark">Strategic Inquiry Form</h3>
+                    <p class="text-slate-500 text-sm font-light">
+                        Select your inquiry segment to route your message directly to the appropriate oversight office.
+                    </p>
+                </div>
+
                 <form id="contactForm" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-sm font-bold text-gray-700 mb-1">Your Name</label>
-                        <input type="text" id="name" required class="w-full px-4 py-3 rounded border-gray-300 bg-gray-50 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all" placeholder="John Doe">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Your Full Name</label>
+                            <input type="text" id="name" required class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-paper/50 focus:bg-white focus:border-brandGold focus:ring-1 focus:ring-brandGold outline-none transition-all text-sm" placeholder="e.g. Dr. John Doe">
+                        </div>
+                        <div>
+                            <label for="institution" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Institution / School Name</label>
+                            <input type="text" id="institution" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-paper/50 focus:bg-white focus:border-brandGold focus:ring-1 focus:ring-brandGold outline-none transition-all text-sm" placeholder="e.g. Lifeword Christian Academy">
+                        </div>
                     </div>
 
                     <div>
-                        <label for="enquiryType" class="block text-sm font-bold text-gray-700 mb-1">Enquiry Type</label>
-                        <select id="enquiryType" class="w-full px-4 py-3 rounded border-gray-300 bg-gray-50 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all cursor-pointer">
-                            <option value="general">General Enquiry</option>
-                            <option value="books">Books & Resources</option>
-                            <option value="family">Family & Parenting</option>
-                            <option value="professional">Professional Services (Training, Consultancy)</option>
+                        <label for="enquiryType" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Primary Consultation Area</label>
+                        <select id="enquiryType" class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-paper/50 focus:bg-white focus:border-brandGold focus:ring-1 focus:ring-brandGold outline-none transition-all text-sm cursor-pointer">
+                            <option value="general">General Administrative Inquiry</option>
+                            <option value="books">Publications, Books & Resources</option>
+                            <option value="family">Family Ministry & Parenting workshops</option>
+                            <option value="professional">Professional Services (Teacher CPD, Consultation, Curriculum Audit)</option>
+                            <option value="school">School Establishment/Transformation </option>
                         </select>
                     </div>
 
                     <div>
-                        <label for="subject" class="block text-sm font-bold text-gray-700 mb-1">Subject</label>
-                        <input type="text" id="subject" required class="w-full px-4 py-3 rounded border-gray-300 bg-gray-50 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all" placeholder="How can we help?">
+                        <label for="subject" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Subject Header</label>
+                        <input type="text" id="subject" required class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-paper/50 focus:bg-white focus:border-brandGold focus:ring-1 focus:ring-brandGold outline-none transition-all text-sm" placeholder="Brief context indicator">
                     </div>
 
                     <div>
-                        <label for="message" class="block text-sm font-bold text-gray-700 mb-1">Message</label>
-                        <textarea id="message" rows="5" required class="w-full px-4 py-3 rounded border-gray-300 bg-gray-50 focus:bg-white focus:border-gold-500 focus:ring-2 focus:ring-gold-200 outline-none transition-all" placeholder="Tell us more..."></textarea>
+                        <label for="message" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Detailed Strategic Requirement</label>
+                        <textarea id="message" rows="5" required class="w-full px-4 py-3.5 rounded-xl border border-slate-200 bg-paper/50 focus:bg-white focus:border-brandGold focus:ring-1 focus:ring-brandGold outline-none transition-all text-sm leading-relaxed" placeholder="Please outline details regarding your specific school timeline, student size, or publications interest..."></textarea>
                     </div>
 
-                    <button type="submit" class="w-full py-4 bg-navy-900 text-white font-bold text-sm uppercase tracking-widest rounded hover:bg-gold-500 hover:text-navy-900 transition-all duration-300 shadow-lg">
-                        Send Message
+                    <button type="submit" class="w-full py-4 bg-gradient-to-r from-brandNavy-dark to-brandNavy text-white font-bold text-xs uppercase tracking-widest rounded-xl hover:from-brandNavy hover:to-brandNavy-light shadow-md transition-all">
+                        Route Message & Open Mail Client
                     </button>
                     
-                    <p class="text-xs text-center text-gray-400 mt-4">This will open your default email client.</p>
+                    <p class="text-[0.65rem] text-center text-slate-400 mt-4 leading-normal font-light">
+                        *Note: Submitting dynamically configures the routing addresses and formats your enquiry directly within your native system mail app.
+                    </p>
                 </form>
             </div>
         </div>
@@ -120,7 +192,7 @@
     <div id="footer-placeholder"></div>
 
     <script>
-        // Load Header/Footer
+        // Setup Component Ingestion & Pre-selection Params
         function loadComponent(id, file) {
             fetch(file).then(r => r.text()).then(d => {
                 document.getElementById(id).innerHTML = d;
@@ -133,43 +205,53 @@
                 });
             }).catch(e => console.error(e));
         }
+        
         document.addEventListener('DOMContentLoaded', () => {
             loadComponent('header-placeholder', 'header.html');
             loadComponent('footer-placeholder', 'footer.html');
             
-            // Handle URL Parameters for Pre-selection
-            const urlParams = new URLSearchParams(window.location.search);
-            const type = urlParams.get('type');
+            const params = new URLSearchParams(window.location.search);
+            const type = params.get('type');
             if(type) {
-                const select = document.getElementById('enquiryType');
-                if(select) select.value = type;
+                const selector = document.getElementById('enquiryType');
+                if(selector) selector.value = type;
             }
         });
 
-        // Contact Form Logic
+        // Sophisticated Form Mailto Construction Logic
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const name = document.getElementById('name').value;
+            const institution = document.getElementById('institution').value || "None";
             const enquiryType = document.getElementById('enquiryType').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // Email Routing Logic
-            let emailTo = 'info@louiseduplusltd.com'; // Default
+            // Dedicated Dynamic Routing Directories
+            let targetEmail = 'info@louiseduplusltd.com'; // Default Core
             
             if (enquiryType === 'family') {
-                emailTo = 'familyministry@louiseduplusltd.com';
+                targetEmail = 'familyministry@louiseduplusltd.com';
             } else if (enquiryType === 'professional') {
-                emailTo = 'directorlep@louiseduplusltd.com';
+                targetEmail = 'directorlep@louiseduplusltd.com';
             } else if (enquiryType === 'books') {
-                emailTo = 'info@louiseduplusltd.com';
+                targetEmail = 'info@louiseduplusltd.com';
             }
             
-            const finalSubject = encodeURIComponent(`[${enquiryType.toUpperCase()}] ${subject}`);
-            const finalBody = encodeURIComponent(`Name: ${name}\n\nMessage:\n${message}`);
+            const compiledSubject = encodeURIComponent(`[${enquiryType.toUpperCase()}] ${subject}`);
+            const compiledBody = encodeURIComponent(
+                `Institutional Strategic Enquiry\n` +
+                `=============================\n` +
+                `Name: ${name}\n` +
+                `Institution: ${institution}\n` +
+                `Category: ${enquiryType.toUpperCase()}\n\n` +
+                `Message Body:\n` +
+                `${message}\n\n` +
+                `Sent via Louis EduPlus Ltd Diagnostic Redesign Site Portal`
+            );
             
-            window.location.href = `mailto:${emailTo}?subject=${finalSubject}&body=${finalBody}`;
+            window.location.href = `mailto:${targetEmail}?subject=${compiledSubject}&body=${compiledBody}`;
         });
     </script>
 </body>
