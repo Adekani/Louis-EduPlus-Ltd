@@ -3,37 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Eduplus Ltd | Empowering Minds, Transforming Learning</title>
-    <meta name="description" content="Revolutionizing global education by integrating innovation with timeless human and Christian values.">
+    <title>Louis EduPlus Ltd | Transforming Education with Divine Purpose</title>
+    <meta name="description" content="Moving schools from simple certificate factories to true Transformation Centres of competence, character, and vision. Educational consultancy led by Louis Odubanjo.">
     
-    <!-- Tailwind CSS (Via CDN for pure HTML requirement) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts -->
+    <!-- Premium Google Fonts Pairing -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Custom Config for Brand Colors -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        gold: {
-                            300: '#fde68a',
-                            400: '#fbbf24',
-                            500: '#d4af37', /* Main Metallic Gold */
-                            600: '#b45309',
-                            700: '#92400e',
+                        brandNavy: {
+                            DEFAULT: '#1A4086', // Vivid Crest Blue
+                            dark: '#0A1931',   // Deep Blue 
+                            light: '#2E5CAE'
                         },
-                        navy: {
-                            800: '#1e293b',
-                            900: '#0f172a', /* Deep Brand Blue */
-                        }
+                        brandGold: {
+                            DEFAULT: '#D4AF37', // Bright Anchor Gold
+                            highlight: '#F6E8BE', // Pale highlights
+                            muted: '#B19147',     // Antique Gold
+                            shadow: '#7A5E23'     // Deep golden bronze
+                        },
+                        paper: '#FAF7F0' // Warm paper background instead of cold white
                     },
                     fontFamily: {
                         serif: ['"Playfair Display"', 'serif'],
@@ -45,220 +42,471 @@
     </script>
     
     <style>
-        /* Custom Animations */
-        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .gold-gradient-text {
-            background: linear-gradient(to right, #fde68a, #d4af37, #fde68a);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            background-size: 200% auto;
-            animation: shine 4s linear infinite;
+        /* Smooth transitions across page navigation */
+        @view-transition {
+            navigation: auto;
         }
 
-        @keyframes shine {
-            to { background-position: 200% center; }
+        .gold-glow {
+            box-shadow: 0 4px 30px rgba(212, 175, 55, 0.15);
         }
-
-        .hero-bg {
-            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+        
+        .gold-border-gradient {
+            border-image: linear-gradient(to right, #FAF7F0, #D4AF37, #7A5E23) 1;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-slate-800 font-sans antialiased selection:bg-gold-500 selection:text-white">
+<body class="bg-paper text-slate-800 font-sans antialiased selection:bg-brandGold selection:text-brandNavy-dark">
 
-    <!-- Header Placeholder -->
+    <!-- Injected Navigation Header -->
     <div id="header-placeholder"></div>
 
-    <!-- HERO SECTION -->
-    <section class="relative h-screen flex items-center justify-center hero-bg overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-navy-900/50 via-transparent to-navy-900/90 pointer-events-none"></div>
-        
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-            <div class="inline-block mb-4 px-4 py-1 border border-gold-500/50 rounded-full bg-navy-900/50 backdrop-blur-sm fade-in-up">
-                <span class="text-gold-300 uppercase tracking-widest text-xs font-bold">Educational Consultancy</span>
-            </div>
-            
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight fade-in-up delay-100">
-                Empowe ring Minds, <br>
-                <span class="gold-gradient-text">Transforming Learning.</span>
-            </h1>
-            
-            <p class="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed fade-in-up delay-200 font-light">
-                Bridging the gap between academic excellence and moral integrity to inspire change for God’s glory.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-4 fade-in-up delay-300">
-                <a href="services.html" class="px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-navy-900 font-bold text-sm uppercase tracking-widest rounded shadow-lg shadow-gold-500/20 hover:scale-105 transition-transform duration-300">
-                    Explore Our Services
-                </a>
-                <a href="contact.html" class="px-8 py-4 bg-transparent border border-white text-white font-bold text-sm uppercase tracking-widest rounded hover:bg-white hover:text-navy-900 transition-all duration-300">
-                    Contact Us
-                </a>
-            </div>
-        </div>
-        
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <i class="fas fa-chevron-down text-gold-400 text-xl"></i>
-        </div>
-    </section>
+    <!-- MAIN HERO -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden bg-gradient-to-br from-brandNavy-dark via-[#0d2244] to-[#122c57] text-white">
+        <!-- Structural Geometric Background Accent -->
+        <div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-brandGold/10 rounded-full blur-[120px]"></div>
+        <div class="absolute -bottom-40 -right-40 w-96 h-96 bg-brandNavy-light/20 rounded-full blur-[120px]"></div>
 
-    <!-- INTRO SECTION -->
-    <section class="py-20 md:py-32 bg-white relative overflow-hidden">
-        <!-- Decorative bg element -->
-        <div class="absolute top-0 right-0 w-64 h-64 bg-gold-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 translate-x-1/2 -translate-y-1/2"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="relative">
-                    <div class="relative z-10 rounded-lg overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Teacher Mentoring Student" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-700">
-                    </div>
-                    <!-- Accent Box -->
-                    <div class="absolute -bottom-6 -right-6 w-2/3 h-2/3 border-2 border-gold-500 -z-0 rounded-lg"></div>
-                </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                 
-                <div class="space-y-6">
-                    <h4 class="text-gold-600 font-bold uppercase tracking-widest text-sm">Welcome to Louis Eduplus</h4>
-                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-navy-900 leading-tight">Where Education <br>Meets Purpose.</h2>
+                <!-- Main Header Text Area -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-brandGold/30 text-brandGold-highlight text-xs font-semibold tracking-widest uppercase">
+                        <i class="fa-solid fa-graduation-cap text-[#D4AF37]"></i> Moving Beyond Standard Pedagogy
+                    </div>
                     
-                    <p class="text-gray-600 leading-relaxed text-lg">
-                        In a rapidly changing world, education requires more than just textbooks; it requires a heart for transformation. At Louis Eduplus, we are revolutionizing global education by integrating innovation with timeless human and Christian values.
-                    </p>
-                    <p class="text-gray-600 leading-relaxed">
-                        We don’t just train teachers or design curricula—we partner with schools, churches, and parents to shape a generation of compassionate, skilled, and faith-rooted individuals.
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight">
+                        Moving Schools from <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGold-highlight via-[#D4AF37] to-brandGold-muted">
+                            Certificate Factories
+                        </span> <br class="hidden sm:inline">
+                        to Transformation Centres
+                    </h1>
+                    
+                    <p class="text-base md:text-lg text-slate-300 font-light max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                        We work with global learning communities to build institutions where critical thinking, academic rigor, and unwavering Christian character thrive as one.
                     </p>
                     
-                    <a href="about.html" class="inline-flex items-center text-navy-900 font-bold hover:text-gold-600 transition-colors mt-4 group">
-                        Read Our Story 
-                        <span class="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
-                    </a>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#assessment" class="px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#B19147] text-brandNavy-dark font-bold text-sm uppercase tracking-widest rounded shadow-lg hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] transition-all transform hover:-translate-y-0.5">
+                            Take School Diagnostic
+                        </a>
+                        <a href="services.html" class="px-8 py-4 bg-transparent border border-white/20 text-white font-bold text-sm uppercase tracking-widest rounded hover:bg-white/5 hover:border-brandGold/50 transition-all">
+                            View Services
+                        </a>
+                    </div>
                 </div>
+
+                
+
             </div>
         </div>
     </section>
 
-    <!-- WHY CHOOSE US (Dark Theme) -->
-    <section class="py-20 bg-navy-900 text-white relative">
+    <!-- TRUTH & PHILOSOPHY -->
+    <section class="py-24 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Credentials Context -->
+                <div class="lg:col-span-5 space-y-4">
+                    <span class="text-[#1A4086] font-bold uppercase tracking-widest text-xs">A Balanced Model</span>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brandNavy-dark">The Visionary Underlying Philosophy</h2>
+                    <div class="w-16 h-1 bg-brandGold"></div>
+                    
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        Many schools have unwittingly become mechanized exam prep centres. While certifications open doors, only deep-rooted competence and character prepare students to survive, excel, and build society in an interconnected world. 
+                    </p>
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        We blend innovative human-centered curriculum strategies with unwavering biblical truth to restructure the educational landscape, enabling sustainable generational growth.
+                    </p>
+                    <div class="pt-2">
+                        <a href="about.html" class="inline-flex items-center text-brandNavy font-bold hover:text-brandGold tracking-wide text-sm group">
+                            Learn more about our methodology
+                            <span class="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Dynamic Value Pillars -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                    
+                    <!-- Item 1 -->
+                    <div class="p-8 rounded-xl bg-paper/60 border border-brandGold/10 hover:border-brandGold/30 hover:bg-white hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 bg-brandNavy/5 rounded-lg flex items-center justify-center mb-6 text-brandNavy">
+                            <i class="fa-solid fa-shield-heart text-xl text-[#1A4086]"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-brandNavy-dark mb-2">Christ-Centred Ethos</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">
+                            Our educational paradigms are intentionally anchored in biblical truths, moving character development alongside standard intelligence metrics.
+                        </p>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="p-8 rounded-xl bg-paper/60 border border-brandGold/10 hover:border-brandGold/30 hover:bg-white hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 bg-brandNavy/5 rounded-lg flex items-center justify-center mb-6 text-brandNavy">
+                            <i class="fa-solid fa-brain text-xl text-[#1A4086]"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-brandNavy-dark mb-2">Cognitive Mastery</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">
+                            Moving beyond simple rote memorization. We teach educators to construct robust inquiry systems that prompt deep, active student cognition.
+                        </p>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="p-8 rounded-xl bg-paper/60 border border-brandGold/10 hover:border-brandGold/30 hover:bg-white hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 bg-brandNavy/5 rounded-lg flex items-center justify-center mb-6 text-brandNavy">
+                            <i class="fa-solid fa-users-gear text-xl text-[#1A4086]"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-brandNavy-dark mb-2">Parent Alignment</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">
+                            Constructing a critical, cooperative bridge between parent mentoring and school management so students encounter unified boundaries.
+                        </p>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="p-8 rounded-xl bg-paper/60 border border-brandGold/10 hover:border-brandGold/30 hover:bg-white hover:shadow-xl transition-all duration-300">
+                        <div class="w-12 h-12 bg-brandNavy/5 rounded-lg flex items-center justify-center mb-6 text-brandNavy">
+                            <i class="fa-solid fa-compass text-xl text-[#1A4086]"></i>
+                        </div>
+                        <h3 class="text-lg font-serif font-bold text-brandNavy-dark mb-2">Global Future Fit</h3>
+                        <p class="text-sm text-slate-500 leading-relaxed font-light">
+                            Nurturing dynamic cross-cultural capacities so learners navigate global systems effectively without shedding personal moral foundations.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE DIAGNOSTIC SELF-ASSESSMENT -->
+    <section id="assessment" class="py-24 bg-paper relative">
+        <div class="absolute inset-0 opacity-5 pointer-events-none bg-[radial-gradient(#0A1931_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-[#1A4086] font-bold uppercase tracking-widest text-xs">Diagnostic Instrument</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brandNavy-dark mt-2">Is Your School a Certificate Factory?</h2>
+                <p class="text-slate-600 mt-4 font-light max-w-xl mx-auto">
+                    Evaluate your institution with this diagnostic assessment based on our <strong>Education Shift</strong> methodology.
+                </p>
+            </div>
+
+            <!-- Quiz Container -->
+            <div class="bg-white rounded-2xl shadow-xl border border-brandGold/20 p-8 md:p-12 transition-all duration-500 gold-glow" id="quiz-wrapper">
+                
+                <!-- Progress bar -->
+                <div class="w-full bg-slate-100 rounded-full h-1.5 mb-8 overflow-hidden">
+                    <div id="quiz-progress" class="bg-gradient-to-r from-brandNavy to-brandGold h-1.5 w-[20%] transition-all duration-300"></div>
+                </div>
+
+                <!-- Questions block -->
+                <div id="quiz-content" class="space-y-6">
+                    <div id="quiz-question-box">
+                        <span id="quiz-q-num" class="text-xs font-bold text-brandGold uppercase tracking-widest block mb-1">Question 1 of 5</span>
+                        <h3 id="quiz-q-text" class="text-xl md:text-2xl font-serif font-bold text-brandNavy-dark leading-snug">
+                            How are student metrics and performance prioritized across primary assessment periods?
+                        </h3>
+                    </div>
+
+                    <div id="quiz-options" class="grid grid-cols-1 gap-4 pt-4">
+                        <!-- Dynamic options loaded via Javascript -->
+                    </div>
+                </div>
+
+                <!-- Result block (hidden initially) -->
+                <div id="quiz-result" class="hidden text-center space-y-6 py-6">
+                    <div class="w-20 h-20 bg-brandGold/10 text-brandGold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i id="result-icon" class="fa-solid fa-circle-nodes text-3xl"></i>
+                    </div>
+                    
+                    <h3 id="result-title" class="text-2xl font-serif font-bold text-brandNavy-dark">Your Assessment Status</h3>
+                    <p id="result-desc" class="text-slate-600 font-light leading-relaxed max-w-lg mx-auto">
+                        Loading analysis metrics...
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="pt-6 flex flex-col sm:flex-row justify-center gap-4">
+                        <button onclick="resetQuiz()" class="px-6 py-3 bg-slate-100 text-slate-700 font-bold uppercase text-xs tracking-widest rounded hover:bg-slate-200 transition-colors">
+                            Restart Test
+                        </button>
+                        <a href="contact.html?type=professional" class="px-8 py-3.5 bg-brandNavy text-white font-bold uppercase text-xs tracking-widest rounded hover:bg-brandNavy-light shadow-md transition-all">
+                            Discuss Strategy Solution
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- REAL FOUNDER ADVOCACY -->
+    <section class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <!-- Editorial Profile Portrait -->
+                <div class="lg:col-span-5 relative">
+                    <div class="absolute inset-0 bg-[#D4AF37]/10 rounded-2xl rotate-2 scale-102"></div>
+                    <div class="relative bg-white border border-slate-200 p-4 rounded-2xl shadow-xl">
+                        <!-- Real photo fallback placeholder for founder profile portrait -->
+                        <div class="aspect-[3/4] relative rounded-lg overflow-hidden bg-brandNavy-dark">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-gradient-to-br from-[#1A4086]/20 to-[#D4AF37]/20 text-[#FAF7F0]">
+                                <i class="fa-solid fa-camera text-3xl mb-3 text-brandGold"></i>
+                                <span class="text-xs font-bold uppercase tracking-widest">Portrait: Louis Odubanjo</span>
+                                <span class="text-[0.65rem] mt-2 opacity-70">Saves actual file as "louis-oasis-academy.jpg"</span>
+                            </div>
+                            <img src="louis-oasis-academy.jpg" alt="Louis Odubanjo Profile"
+                                 class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
+                                 style="opacity:0;"
+                                 onload="this.style.opacity='1';"
+                                 onerror="this.style.opacity='0';">
+                        </div>
+                        
+                        <div class="pt-4 text-center">
+                            <h4 class="font-serif font-bold text-brandNavy-dark text-lg">Louis Odubanjo, M.Ed., MCCT</h4>
+                            <p class="text-xs text-brandGold font-bold uppercase tracking-widest mt-1">Founder & Director of Consultancy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bio & Narrative -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-[#1A4086] font-bold uppercase tracking-widest text-xs">Direct Advocacy</span>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-brandNavy-dark">Authentic Leadership in Education Reform</h2>
+                    <div class="w-16 h-1 bg-brandGold"></div>
+
+                    <!-- Pullquote -->
+                    <blockquote class="border-l-4 border-brandGold pl-6 italic text-slate-600 text-lg md:text-xl font-serif font-light my-6 leading-relaxed">
+                        "This work was born from years of wrestling with hard questions — questions that emerged not only in lecture halls, but in ordinary classrooms, staff rooms, and even playgrounds."
+                    </blockquote>
+
+                    <p class="text-slate-600 leading-relaxed font-light">
+                        Louis Odubanjo is an educator, thinker, mentor, and advocate for transformation-driven education, trained at the prestigious <strong>University of Ibadan</strong>. Recognizing that standard institutional systems are struggling to survive modern shifts, he dedicates his consultancy to restructuring teacher preparedness, global relevancy, and parenting framework systems.
+                    </p>
+                    
+                    <div class="pt-2">
+                        <a href="about.html" class="inline-flex items-center px-6 py-3 border border-brandNavy text-brandNavy font-bold uppercase text-xs tracking-widest rounded hover:bg-brandNavy hover:text-white transition-all duration-300">
+                            Read Full Story
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS TEASER -->
+    <section class="py-24 bg-paper border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Why Louis Eduplus?</h2>
-                <div class="w-24 h-1 bg-gold-500 mx-auto"></div>
+                <span class="text-[#1A4086] font-bold uppercase tracking-widest text-xs">Author Credential</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-brandNavy-dark mt-2">Pioneering Thought Leadership</h2>
+                <div class="w-16 h-1 bg-brandGold mx-auto mt-4"></div>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-navy-800 p-8 rounded-lg border border-white/5 hover:border-gold-500/50 transition-colors group cursor-default">
-                    <div class="w-14 h-14 bg-gold-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors">
-                        <i class="fas fa-cross text-gold-500 text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 text-white">Christ-Centred Philosophy</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Our programs are grounded in biblical truth, helping learners and leaders fulfill their God-given purpose.
-                    </p>
-                </div>
                 
-                <!-- Card 2 -->
-                <div class="bg-navy-800 p-8 rounded-lg border border-white/5 hover:border-gold-500/50 transition-colors group cursor-default">
-                    <div class="w-14 h-14 bg-gold-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors">
-                        <i class="fas fa-brain text-gold-500 text-2xl"></i>
+                <!-- Book 1 Teaser -->
+                <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                    <div class="space-y-4">
+                        <img src="ripples.jpg" alt="Ripples in Teacher Education book cover" class="aspect-[2/3] w-full rounded-lg object-cover border-r-4 border-brandGold shadow-md">
+                        <h4 class="font-serif font-bold text-brandNavy-dark text-lg pt-2">Ripples in Teacher Education</h4>
+                        <p class="text-xs text-slate-500 font-light leading-relaxed">
+                            How educators shape instruction that echoes far beyond classical classrooms to drive lasting intercultural competency.
+                        </p>
                     </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 text-white">Holistic Transformation</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        We nurture the mind, heart, and spirit—intellect alongside integrity for complete development.
-                    </p>
-                </div>
-                
-                <!-- Card 3 -->
-                <div class="bg-navy-800 p-8 rounded-lg border border-white/5 hover:border-gold-500/50 transition-colors group cursor-default">
-                    <div class="w-14 h-14 bg-gold-500/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-gold-500/20 transition-colors">
-                        <i class="fas fa-seedling text-gold-500 text-2xl"></i>
+                    <div class="pt-6 border-t border-slate-100 mt-6">
+                        <a href="books.html" class="text-xs font-bold text-brandNavy hover:text-brandGold tracking-wider uppercase block text-center">Learn More & Order →</a>
                     </div>
-                    <h3 class="text-xl font-serif font-bold mb-3 text-white">Sustainable Impact</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        We build capacity that lasts, equipping you to grow in wisdom long after our work is done.
-                    </p>
                 </div>
+
+                <!-- Book 2 Teaser -->
+                <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                    <div class="space-y-4">
+                        <img src="shift.webp" alt="The Education Shift book cover" class="aspect-[2/3] w-full rounded-lg object-cover border-r-4 border-brandGold shadow-md">
+                        <h4 class="font-serif font-bold text-brandNavy-dark text-lg pt-2">The Education Shift</h4>
+                        <p class="text-xs text-slate-500 font-light leading-relaxed">
+                            A rigorous call for programmatic change. Outlining clear diagnostic systems to build schools of purpose and competency.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6">
+                        <a href="books.html" class="text-xs font-bold text-brandNavy hover:text-brandGold tracking-wider uppercase block text-center">Learn More & Order →</a>
+                    </div>
+                </div>
+
+                <!-- Book 3 Teaser -->
+                <div class="bg-white rounded-xl shadow-lg border border-slate-100 p-6 flex flex-col justify-between hover:shadow-xl transition-all duration-300">
+                    <div class="space-y-4">
+                        <img src="comformix.jpg" alt="ComforMIX book cover" class="aspect-[2/3] w-full rounded-lg object-cover border-r-4 border-brandGold shadow-md">
+                        <h4 class="font-serif font-bold text-brandNavy-dark text-lg pt-2">ComforMIX</h4>
+                        <p class="text-xs text-slate-500 font-light leading-relaxed">
+                            An analytical narrative studying what transpires when institutional goals of inclusion meet honest human difference.
+                        </p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-100 mt-6">
+                        <a href="books.html" class="text-xs font-bold text-brandNavy hover:text-brandGold tracking-wider uppercase block text-center">Learn More & Order →</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- IMPACT AREAS -->
-    <section class="py-20 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <span class="text-gold-600 font-bold uppercase tracking-widest text-sm">Our Reach</span>
-                <h2 class="text-3xl md:text-5xl font-serif font-bold text-navy-900 mt-2">Impact Areas</h2>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-xl overflow-hidden shadow-2xl">
-                <!-- Schools -->
-                <div class="relative group h-80 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-navy-900/80 group-hover:bg-navy-900/70 transition-colors flex flex-col justify-center items-center p-6 text-center">
-                        <h3 class="text-2xl font-serif font-bold text-white mb-2">For Schools</h3>
-                        <p class="text-gray-300 text-sm mb-4 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Strategic consultancy and curriculum reviews that align with faith and excellence.</p>
-                    </div>
-                </div>
+    <!-- OUTSTANDING FINAL CTA -->
+    <section class="py-24 bg-gradient-to-br from-brandNavy-dark to-brandNavy relative text-white text-center overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brandGold/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-                <!-- Educators -->
-                <div class="relative group h-80 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gold-600/90 group-hover:bg-gold-600/80 transition-colors flex flex-col justify-center items-center p-6 text-center">
-                        <h3 class="text-2xl font-serif font-bold text-navy-900 mb-2">For Educators</h3>
-                        <p class="text-navy-900 text-sm mb-4 font-medium opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Professional development workshops that reignite passion and purpose.</p>
-                    </div>
-                </div>
-
-                <!-- Parents -->
-                <div class="relative group h-80 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-navy-900/80 group-hover:bg-navy-900/70 transition-colors flex flex-col justify-center items-center p-6 text-center">
-                        <h3 class="text-2xl font-serif font-bold text-white mb-2">For Parents</h3>
-                        <p class="text-gray-300 text-sm mb-4 opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">Tools to collaboratively nurture the spiritual and academic growth of your children.</p>
-                    </div>
-                </div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 space-y-6">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold leading-tight">Ready to initiate the shift?</h2>
+            <p class="text-slate-300 font-light max-w-xl mx-auto text-base md:text-lg leading-relaxed">
+                Empower your institution's future through practical consulting alignment. Speak with our lead director today.
+            </p>
+            <div class="pt-6">
+                <a href="contact.html?type=professional" class="inline-block px-10 py-4 bg-gradient-to-r from-[#D4AF37] to-[#B19147] text-brandNavy-dark font-bold text-sm uppercase tracking-widest rounded shadow-xl hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] transition-all">
+                    Initiate Consultation
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- CALL TO ACTION -->
-    <section class="py-20 bg-white border-t border-gray-100">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy-900 mb-6">Ready to transform your educational journey?</h2>
-            <a href="contact.html" class="inline-block px-10 py-4 bg-navy-900 text-white font-bold text-sm uppercase tracking-widest rounded hover:bg-gold-500 hover:text-navy-900 transition-all duration-300 shadow-xl">
-                Get in Touch Today
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer Placeholder -->
+    <!-- Injected Navigation Footer -->
     <div id="footer-placeholder"></div>
 
-    <!-- Scripts for dynamic loading -->
+    <!-- SCRIPT INFRASTRUCTURE -->
     <script>
-        // Load Header and Footer
+        // Diagnostic Assessment Logic
+        const quizData = [
+            {
+                q: "Which metric is the primary success driver within your typical grading structures?",
+                options: [
+                    { text: "Purely exam and certification completion scoring (rote output)", points: 1 },
+                    { text: "Rote scores accompanied by general citizenship awards", points: 2 },
+                    { text: "Practical inquiry metrics prioritizing character, cognition, & real solutions", points: 3 }
+                ]
+            },
+            {
+                q: "How does your institution handle continuous teacher professional development (CPD)?",
+                options: [
+                    { text: "Ad-hoc compliance workshops run occasionally near inspections", points: 1 },
+                    { text: "Regular training focused on modern administrative compliance", points: 2 },
+                    { text: "Intentional mentorship focusing on reflective practice and faith-values design", points: 3 }
+                ]
+            },
+            {
+                q: "What is the typical nature of parent involvement within student curriculum plans?",
+                options: [
+                    { text: "Transactional relationship mostly around tuition and reports", points: 1 },
+                    { text: "Standard parents' assembly updates with loose collaboration", points: 2 },
+                    { text: "Integrated mentoring with workshops aligning classroom study to home values", points: 3 }
+                ]
+            },
+            {
+                q: "How are 21st-century values integrated across your curriculum?",
+                options: [
+                    { text: "Rarely discussed; textbook content is prioritized purely for test passing", points: 1 },
+                    { text: "Included as auxiliary topics or standalone compliance segments", points: 2 },
+                    { text: "Deeply aligned into core pedagogy so ethics and critical logic are synthesized", points: 3 }
+                ]
+            },
+            {
+                q: "What is your primary focus when reviewing your school's long-term goals?",
+                options: [
+                    { text: "Optimizing throughput, admissions numbers, and exam league tables", points: 1 },
+                    { text: "Balancing local status with loose regional values integration", points: 2 },
+                    { text: "Evolving teachers and structures to secure active kingdom and community impact", points: 3 }
+                ]
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function loadQuestion() {
+            const questionBox = document.getElementById("quiz-question-box");
+            const qNum = document.getElementById("quiz-q-num");
+            const qText = document.getElementById("quiz-q-text");
+            const optionsDiv = document.getElementById("quiz-options");
+            const progress = document.getElementById("quiz-progress");
+
+            // Update Progress Bar
+            progress.style.width = `${((currentQuestion + 1) / quizData.length) * 100}%`;
+
+            qNum.textContent = `Question ${currentQuestion + 1} of ${quizData.length}`;
+            qText.textContent = quizData[currentQuestion].q;
+
+            optionsDiv.innerHTML = "";
+            quizData[currentQuestion].options.forEach((opt, idx) => {
+                const btn = document.createElement("button");
+                btn.className = "w-full text-left p-4 rounded-lg border border-slate-200 hover:border-brandGold hover:bg-paper font-light transition-all duration-300 focus:outline-none flex items-center justify-between group";
+                btn.innerHTML = `
+                    <span>${opt.text}</span>
+                    <span class="w-6 h-6 rounded-full border border-slate-300 flex items-center justify-center group-hover:border-brandGold group-hover:bg-brandGold/10 transition-colors text-xs text-transparent group-hover:text-brandGold">✓</span>
+                `;
+                btn.onclick = () => selectOption(opt.points);
+                optionsDiv.appendChild(btn);
+            });
+        }
+
+        function selectOption(points) {
+            score += points;
+            currentQuestion++;
+            if (currentQuestion < quizData.length) {
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById("quiz-content").classList.add("hidden");
+            const resultDiv = document.getElementById("quiz-result");
+            resultDiv.classList.remove("hidden");
+
+            const icon = document.getElementById("result-icon");
+            const title = document.getElementById("result-title");
+            const desc = document.getElementById("result-desc");
+
+            let maxScore = quizData.length * 3;
+            let percentage = (score / maxScore) * 100;
+
+            if (score <= 7) {
+                icon.className = "fa-solid fa-factory text-3xl";
+                title.textContent = "High Risk: Certificate Factory Profile";
+                desc.textContent = "Your metrics indicate heavy alignment with standard, mechanized exam models. Students output certifications but are highly vulnerable to real-world character & cognitive shifts. A strategic transformation-centered diagnostic is highly recommended.";
+            } else if (score <= 11) {
+                icon.className = "fa-solid fa-scale-balanced text-3xl";
+                title.textContent = "Transition State: Traditional Balance";
+                desc.textContent = "Your school recognizes standard curriculum limits and values-based design, but lacks integrated structural implementation. Pedagogies remain tethered to traditional test-throughput. Dynamic consulting could unlock substantial acceleration.";
+            } else {
+                icon.className = "fa-solid fa-hands-holding-child text-3xl";
+                title.textContent = "Strong Profile: Emerging Transformation Centre";
+                desc.textContent = "Congratulations. Your school exhibits foundational practices for active cognitive mastery, values, and parental cohesion. We can partner with you to refine your operations for global recognition and standardized scale.";
+            }
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById("quiz-result").classList.add("hidden");
+            document.getElementById("quiz-content").classList.remove("hidden");
+            loadQuestion();
+        }
+
+        // Standard Dynamic Component Loader
         function loadComponent(id, file) {
             fetch(file)
                 .then(response => {
-                    if (!response.ok) throw new Error("Network response was not ok");
+                    if (!response.ok) throw new Error("Component load error");
                     return response.text();
                 })
                 .then(data => {
                     document.getElementById(id).innerHTML = data;
-                    // Re-execute scripts in the injected content (nav logic)
                     const scripts = document.getElementById(id).querySelectorAll("script");
                     scripts.forEach(oldScript => {
                         const newScript = document.createElement("script");
@@ -267,18 +515,13 @@
                         oldScript.parentNode.replaceChild(newScript, oldScript);
                     });
                 })
-                .catch(error => {
-                    console.error('Error loading component:', error);
-                    // Fallback message for local testing without server
-                    if(window.location.protocol === 'file:') {
-                        document.getElementById(id).innerHTML = `<div class="p-4 bg-red-100 text-red-700 text-center">Note: Components cannot load via file:// protocol. Use a local server or GitHub Pages.</div>`;
-                    }
-                });
+                .catch(error => console.error('Error loading segment:', error));
         }
 
         document.addEventListener('DOMContentLoaded', () => {
             loadComponent('header-placeholder', 'header.html');
             loadComponent('footer-placeholder', 'footer.html');
+            loadQuestion();
         });
     </script>
 </body>
