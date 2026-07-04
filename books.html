@@ -3,100 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books & Resources | Louis Eduplus Ltd</title>
+    <title>Publications & Books | Louis EduPlus Ltd</title>
+    <meta name="description" content="Explore published works by Louis Odubanjo including Ripples in Teacher Education, ComforMIX, and The Education Shift. Detailed pedagogical roadmaps.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        gold: { 300: '#fde68a', 400: '#fbbf24', 500: '#d4af37', 600: '#b45309', 700: '#92400e' },
-                        navy: { 800: '#1e293b', 900: '#0f172a' }
+                        brandNavy: { DEFAULT: '#1A4086', dark: '#0A1931', light: '#2E5CAE' },
+                        brandGold: { DEFAULT: '#D4AF37', highlight: '#F6E8BE', muted: '#B19147', shadow: '#7A5E23' },
+                        paper: '#FAF7F0'
                     },
-                    fontFamily: { serif: ['"Playfair Display"', 'serif'], sans: ['"Plus Jakarta Sans"', 'sans-serif'] }
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
                 }
             }
         }
     </script>
+    <style>
+        @view-transition { navigation: auto; }
+        .book-binding { box-shadow: 10px 10px 25px rgba(0,0,0,0.2), inset 4px 0 10px rgba(255,255,255,0.1); }
+    </style>
 </head>
-<body class="bg-gray-50 text-slate-800 font-sans antialiased">
+<body class="bg-paper text-slate-800 font-sans antialiased selection:bg-brandGold selection:text-brandNavy-dark">
 
     <div id="header-placeholder"></div>
 
-    <div class="bg-navy-900 pt-32 pb-16 text-center text-white">
-        <h1 class="text-4xl md:text-5xl font-serif font-bold mb-4">Read. Learn. Grow.</h1>
-        <p class="text-xl text-gold-300 font-light">Thought leadership by Louis Odubanjo and Louis Eduplus Ltd.</p>
-    </div>
+    <!-- MAIN HEADER -->
+    <header class="relative py-28 md:py-36 bg-gradient-to-br from-brandNavy-dark to-brandNavy text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-4">
+            <span class="text-brandGold uppercase font-bold tracking-widest text-xs">Pioneering Literature</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold">Read. Learn. Grow.</h1>
+            <div class="w-16 h-1 bg-brandGold mx-auto mt-4"></div>
+        </div>
+    </header>
 
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16">
-            We believe in the power of the written word to extend mentorship beyond the classroom. Explore our latest publications designed to support teachers, school leaders, and parents.
-        </p>
+    <!-- INTRO -->
+    <section class="py-16 bg-white border-b border-slate-100">
+        <div class="max-w-3xl mx-auto text-center px-4">
+            <p class="text-lg md:text-xl text-slate-600 font-light leading-relaxed">
+                We believe in the power of the written word to extend mentorship beyond physical borders. Explore our published works providing practical pathways for school administrators, teachers, and parents.
+            </p>
+        </div>
+    </section>
 
-        <!-- Book 1 -->
-        <div class="flex flex-col md:flex-row gap-10 items-start mb-20 bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-            <!-- Book Cover Placeholder -->
-            <div class="w-full md:w-1/3 flex-shrink-0">
-                <div class="aspect-[2/3] bg-gradient-to-br from-navy-800 to-navy-900 rounded-lg shadow-xl flex items-center justify-center relative overflow-hidden group">
-                    <img 
-                       src="ripples.jpg"
-                       alt="Ripples in Teacher Education book cover"
-                       class="absolute inset-0 w-full h-full object-cover"
-                   />
-                </div>
-            </div>
+    <!-- PUBLICATIONS SECTION -->
+    <section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+        
+        <!-- Book 1: The Education Shift -->
+        <div class="flex flex-col lg:flex-row gap-16 items-center bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-brandGold to-brandNavy"></div>
             
-            <div class="flex-grow space-y-4">
-                <h2 class="text-3xl font-serif font-bold text-navy-900">Ripples in Teacher Education</h2>
-                <h3 class="text-lg text-gold-600 font-medium">Teaching for Global Relevance</h3>
+            <!-- Cover Frame -->
+            <div class="w-full lg:w-5/12 flex-shrink-0">
+			    <img src="shift.webp" alt="The Education Shift book cover" class="aspect-[2/3] w-full max-w-sm mx-auto rounded-xl object-cover book-binding border-r-8 border-brandGold shadow-lg">
+			</div>
+
+            <!-- Content -->
+            <div class="flex-grow space-y-6">
+                <div class="space-y-2">
+                    <span class="text-[#1A4086] font-bold uppercase tracking-widest text-xs">Featured Title</span>
+                    <h2 class="text-3xl font-serif font-bold text-[#0A1931]">The Education Shift</h2>
+                    <h3 class="text-base text-brandGold font-semibold uppercase tracking-wider">From Certificate Factory to Transformation Centre</h3>
+                </div>
                 
-                <p class="text-gray-600 leading-relaxed">
-                    Ripples in Teacher Education: Teaching for Global Relevance explores how educators can shape learning that resonates far beyond the classroom. This forward-looking volume examines the evolving demands of a rapidly interconnected world and provides practical pathways for preparing teachers to meet them. Through compelling insights, it highlights how inquiry-based learning, intercultural competence, and adaptable teaching practices create classrooms that empower students to think critically and act responsibly on global issues.
+                <p class="text-slate-600 font-light leading-relaxed text-base">
+                    For decades, standardized education systems have processed graduates via memory-recall exams and certificates, leaving them dangerously unequipped for complex, modern life. 
                 </p>
-                <p class="text-gray-600 leading-relaxed">
-                    The book emphasizes the importance of reflective practice, collaborative learning communities, and innovative pedagogies that nurture global citizenship. Ripples in Teacher Education invites educators, policymakers, and stakeholders to reimagine teacher preparation as a catalyst for meaningful, worldwide impact.
+                <p class="text-slate-600 font-light leading-relaxed text-sm">
+                    The Education Shift acts as a practical roadmap. It challenges conventional, passive curriculum delivery and offers a unified path to constructing schools that optimize student cognition, Christian values, authentic character development, and future readiness.
                 </p>
                 
                 <div class="pt-4">
-                    <a href="https://a.co/d/gX3ZA65" target="_blank" class="inline-flex items-center px-8 py-3 bg-gold-500 text-white font-bold rounded shadow-lg hover:bg-gold-600 transition-colors">
-                        <i class="fab fa-amazon mr-2"></i> Order Now
+                    <a href="https://a.co/d/0bfASOFs" target="_blank" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#B19147] text-brandNavy-dark font-bold text-xs uppercase tracking-widest rounded shadow-md hover:shadow-lg transition-all">
+                        <i class="fab fa-amazon mr-2 text-base"></i> Order on Amazon
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Book 2 -->
-        <div class="flex flex-col md:flex-row gap-10 items-start bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-            <!-- Book Cover Placeholder -->
-            <div class="w-full md:w-1/3 flex-shrink-0">
-                <div class="aspect-[2/3] bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg shadow-xl flex items-center justify-center relative overflow-hidden group">
-                     <img 
-                       src="comformix.jpg"
-                       alt="Ripples in Teacher Education book cover"
-                       class="absolute inset-0 w-full h-full object-cover"
-                   />
+        <!-- Book 2: Ripples in Teacher Education -->
+        <div class="flex flex-col lg:flex-row gap-16 items-center bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-brandGold to-brandNavy"></div>
+            
+            <!-- Cover Frame -->
+            <div class="w-full lg:w-5/12 flex-shrink-0">
+    <img src="ripples.jpg" alt="Ripples in Teacher Education book cover" class="aspect-[2/3] w-full max-w-sm mx-auto rounded-xl object-cover book-binding border-r-8 border-brandGold shadow-lg">
+</div>
+
+            <!-- Content -->
+            <div class="flex-grow space-y-6">
+                <div class="space-y-2">
+                    <span class="text-[#1A4086] font-bold uppercase tracking-widest text-xs">Pedagogical Framework</span>
+                    <h2 class="text-3xl font-serif font-bold text-[#0A1931]">Ripples in Teacher Education</h2>
+                    <h3 class="text-base text-brandGold font-semibold uppercase tracking-wider">A Timely Reflection on Relevance, Reform, and the Global Future of Teaching</h3>
+                </div>
+                
+                <p class="text-slate-600 font-light leading-relaxed text-base">
+                    Are modern educators truly structured for contemporary classroom shifts, or simply trained to maintain standard regulatory status? 
+                </p>
+                <p class="text-slate-600 font-light leading-relaxed text-sm">
+                    Drawing from over a decade of hands-on, cross-cultural classroom experience across Nigeria and Western frameworks, Louis Odubanjo explores global teacher development. The book charts pathways to encourage deep, reflective, solution-oriented teacher agency, fostering classrooms of active citizenship and inquiry.
+                </p>
+
+                <!-- Editorial Quote Panel -->
+                <div class="bg-paper p-6 rounded-2xl border border-slate-100 italic text-slate-500 font-serif text-sm relative">
+                    <i class="fa-solid fa-quote-left text-brandGold/20 text-3xl absolute top-2 left-2"></i>
+                    <p class="relative z-10 pl-6 leading-relaxed">
+                        "The future of any society depends on the quality of its teachers. If we are to secure that future, teacher education must not remain business-as-usual."
+                    </p>
+                </div>
+                
+                <div class="pt-4">
+                    <a href="https://a.co/d/0f5E0B94" target="_blank" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#B19147] text-brandNavy-dark font-bold text-xs uppercase tracking-widest rounded shadow-md hover:shadow-lg transition-all">
+                        <i class="fab fa-amazon mr-2 text-base"></i> Order on Amazon
+                    </a>
                 </div>
             </div>
+        </div>
+
+        <!-- Book 3: ComforMIX -->
+        <div class="flex flex-col lg:flex-row gap-16 items-center bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-brandGold to-brandNavy"></div>
             
-            <div class="flex-grow space-y-4">
-                <h2 class="text-3xl font-serif font-bold text-navy-900">ComforMIX</h2>
-                <h3 class="text-lg text-gold-600 font-medium">Where the Mixture Does Not Mix</h3>
+            <!-- Cover Frame -->
+            <div class="w-full lg:w-5/12 flex-shrink-0">
+    <img src="comformix.jpg" alt="ComforMIX book cover" class="aspect-[2/3] w-full max-w-sm mx-auto rounded-xl object-cover book-binding border-r-8 border-brandGold shadow-lg">
+</div>
+
+            <!-- Content -->
+            <div class="flex-grow space-y-6">
+                <div class="space-y-2">
+                    <span class="text-[#1A4086] font-bold uppercase tracking-widest text-xs">Narrative Case Study</span>
+                    <h2 class="text-3xl font-serif font-bold text-[#0A1931]">ComforMIX</h2>
+                    <h3 class="text-base text-brandGold font-semibold uppercase tracking-wider">Where the Mixture Does Not Mix</h3>
+                </div>
                 
-                <p class="text-gray-600 leading-relaxed">
-                    In ComforMIX: Where the Mixture Does Not Mix, the school becomes more than a place of learning—it becomes a reflection of the world we are building together. Centred on a school community determined to live out its mission of inclusion and excellence, this insightful book explores what happens when the desire for unity meets the honest reality of difference.
+                <p class="text-slate-600 font-light leading-relaxed text-base">
+                    What occurs when the idealistic conceptualization of inclusion encounters the profound and honest differences within real-world human interactions?
                 </p>
-                <p class="text-gray-600 leading-relaxed">
-                    Drawing from real educational experiences, ComforMIX speaks to teachers, school leaders, and parents alike. It challenges all who shape young minds to look beyond surface harmony and engage with the deeper work of understanding, respect, and authentic belonging.
-                </p>
-                <p class="text-gray-600 leading-relaxed">
-                    Through its powerful storytelling and practical reflection, ComforMIX reminds us that true education—and true community—flourish not when every voice sounds the same, but when every voice is heard.
+                <p class="text-slate-600 font-light leading-relaxed text-sm">
+                    Focused on a singular school community striving to balance diversity and institutional excellence, ComforMIX examines the friction points when uniform structural frameworks meet cultural differences. It challenges teachers, administrators, and parents to look past surface-level integration and build deep, respectful, and authentic belonging.
                 </p>
                 
                 <div class="pt-4">
-                    <a href="https://a.co/d/1T3QAEg" target="_blank" class="inline-flex items-center px-8 py-3 bg-gold-500 text-white font-bold rounded shadow-lg hover:bg-gold-600 transition-colors">
-                        <i class="fab fa-amazon mr-2"></i> Order Now
+                    <a href="https://a.co/d/06iIhrYU" target="_blank" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#D4AF37] to-[#B19147] text-brandNavy-dark font-bold text-xs uppercase tracking-widest rounded shadow-md hover:shadow-lg transition-all">
+                        <i class="fab fa-amazon mr-2 text-base"></i> Order on Amazon
                     </a>
                 </div>
             </div>
