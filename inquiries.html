@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Chat with Tola | Louis EduPlus Ltd</title>
+    <meta name="description" content="Talk with Tola, Louis EduPlus Ltd's customer relations assistant, regarding school transformation, teacher training, and publications.">
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandNavy: {
+                            DEFAULT: '#1A4086',
+                            dark: '#0A1931',
+                            light: '#2E5CAE',
+                            deep: '#061224'
+                        },
+                        brandGold: {
+                            DEFAULT: '#D4AF37',
+                            highlight: '#F6E8BE',
+                            muted: '#B19147',
+                            shadow: '#7A5E23'
+                        },
+                        paper: '#FAF7F0',
+                        waBg: '#E5DDD5',
+                        waDarkBg: '#0B141A',
+                        waBubbleOut: '#DCF8C6',
+                        waBubbleOutDark: '#005C4B',
+                        waBubbleIn: '#FFFFFF',
+                        waBubbleInDark: '#202C33'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom WhatsApp Background Pattern Overlay */
+        .chat-wallpaper {
+            background-color: #efeae2;
+            background-image: radial-gradient(#1a4086 0.75px, transparent 0.75px), radial-gradient(#d4af37 0.75px, #efeae2 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.95;
+        }
+
+        /* Ensure smooth sticky layout for mobile viewports with keyboard */
+        html, body {
+            height: 100%;
+            height: -webkit-fill-available;
+            overflow: hidden;
+            touch-action: manipulation;
+        }
+
+        .app-container {
+            height: 100vh;
+            height: 100dvh;
+        }
+
+        /* Expandable textarea with max 4 lines preview */
+        .chat-textarea {
+            resize: none;
+            line-height: 1.35rem;
+            max-height: calc(1.35rem * 4 + 1rem); /* max 4 lines + padding */
+            min-height: 2.35rem;
+            overflow-y: auto;
+            scrollbar-width: thin;
+        }
+
+        /* Scrollbar styles for messages */
+        .chat-scroll::-webkit-scrollbar {
+            width: 5px;
+        }
+        .chat-scroll::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.4);
+            border-radius: 10px;
+        }
+
+        /* Message bubble animations */
+        @keyframes popIn {
+            0% { opacity: 0; transform: translateY(8px) scale(0.97); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .message-anim {
+            animation: popIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Search highlight glow */
+        .search-highlight {
+            background-color: rgba(212, 175, 55, 0.45);
+            padding: 0 2px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+        .search-highlight-active {
+            background-color: #D4AF37;
+            color: #0A1931;
+            padding: 0 4px;
+            border-radius: 3px;
+        }
+
+        /* Typing indicator animation */
+        .typing-dot {
+            animation: typingBounce 1.4s infinite ease-in-out;
+        }
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typingBounce {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body class="bg-brandNavy-dark text-slate-800 font-sans antialiased select-none">
+
+    <!-- MAIN APP WRAPPER -->
+    <div class="app-container flex flex-col max-w-4xl mx-auto bg-[#efeae2] shadow-2xl relative overflow-hidden">
+
+        <!-- FIXED TOP HEADER (WhatsApp Style) -->
+        <header id="main-header" class="shrink-0 bg-brandNavy-dark text-white z-50 shadow-md border-b border-brandGold/20 transition-all duration-300">
+            <!-- Normal Header Bar -->
+            <div id="header-normal" class="px-4 py-3 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <a href="index.html" title="Back to Louis EduPlus Website" class="p-2 -ml-2 text-slate-300 hover:text-brandGold transition-colors flex items-center gap-1">
+                        <i class="fa-solid fa-arrow-left text-lg"></i>
+                    </a>
+                    
+                    <!-- Profile Picture -->
+                    <div class="relative cursor-pointer" onclick="toggleProfileModal()">
+                        <img src="logo.jpeg" alt="Tola - Louis EduPlus" 
+                             class="w-11 h-11 rounded-full object-cover border-2 border-brandGold bg-white shadow-sm"
+                             onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' fill=\'%231A4086\'><circle cx=\'50\' cy=\'50\' r=\'50\'/><text x=\'50%\' y=\'55%\' font-size=\'32\' font-weight=\'bold\' fill=\'%23D4AF37\' text-anchor=\'middle\' dominant-baseline=\'middle\'>LEP</text></svg>';">
+                        <span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-brandNavy-dark rounded-full"></span>
+                    </div>
+
+                    <!-- Assistant Info -->
+                    <div class="flex flex-col cursor-pointer" onclick="toggleProfileModal()">
+                        <div class="flex items-center gap-1.5">
+                            <h1 class="font-serif font-bold text-base text-white tracking-wide leading-tight">Tola</h1>
+                            <span class="bg-brandGold/20 text-brandGold text-[10px] px-1.5 py-0.5 rounded font-sans uppercase font-semibold border border-brandGold/30">Official AI</span>
+                        </div>
+                        <span id="status-text" class="text-xs text-emerald-400 font-light flex items-center gap-1 mt-0.5">
+                            <span class="inline-block w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span> online • Customer Relations Officer
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Header Action Buttons -->
+                <div class="flex items-center gap-1 sm:gap-2">
+                    <button onclick="toggleSearch()" title="Search chat" class="p-2.5 text-slate-300 hover:text-brandGold rounded-full hover:bg-white/5 transition-all">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                    <button onclick="clearChatConfirm()" title="Clear Chat" class="p-2.5 text-slate-300 hover:text-rose-400 rounded-full hover:bg-white/5 transition-all">
+                        <i class="fa-solid fa-trash-can text-lg"></i>
+                    </button>
+                    <button onclick="toggleProfileModal()" title="Info" class="p-2.5 text-slate-300 hover:text-brandGold rounded-full hover:bg-white/5 transition-all">
+                        <i class="fa-solid fa-circle-info text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- In-Chat Search Header (Overlay) -->
+            <div id="header-search" class="hidden px-4 py-2 bg-brandNavy-dark/95 border-b border-brandGold/30 flex items-center gap-3">
+                <button onclick="toggleSearch()" class="text-slate-300 hover:text-white p-1">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <div class="flex-1 relative">
+                    <input type="text" id="search-input" placeholder="Search messages..." 
+                           oninput="performSearch()"
+                           class="w-full bg-white/10 text-white placeholder-slate-400 text-sm rounded-full pl-9 pr-8 py-1.5 outline-none border border-brandGold/30 focus:border-brandGold">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-xs text-slate-400"></i>
+                    <span id="search-count" class="absolute right-3 top-2 text-xs text-brandGold font-mono"></span>
+                </div>
+                <div class="flex items-center gap-1 text-slate-300">
+                    <button onclick="navigateSearch(-1)" class="p-1 hover:text-brandGold"><i class="fa-solid fa-chevron-up"></i></button>
+                    <button onclick="navigateSearch(1)" class="p-1 hover:text-brandGold"><i class="fa-solid fa-chevron-down"></i></button>
+                </div>
+            </div>
+        </header>
+
+        <!-- CHAT MESSAGES SCROLL AREA -->
+        <main id="chat-container" class="flex-1 overflow-y-auto chat-scroll chat-wallpaper p-4 space-y-3 relative">
+            
+            <!-- Encrypted Notice / Welcome Banner -->
+            <div class="text-center my-3">
+                <span class="inline-block bg-[#FFF8E7] text-[#7A5E23] text-xs font-medium px-4 py-1.5 rounded-lg border border-brandGold/30 shadow-sm max-w-md">
+                    <i class="fa-solid fa-lock text-brandGold mr-1.5"></i>
+                    Connected directly to <strong>Louis EduPlus Ltd</strong>. Messages are encrypted and processed in real time by Tola.
+                </span>
+            </div>
+
+            <div class="text-center my-2">
+                <span id="chat-start-time" class="bg-black/20 text-slate-700 text-[11px] font-semibold px-2.5 py-0.5 rounded-full uppercase tracking-wider backdrop-blur-sm">
+                    Today
+                </span>
+            </div>
+
+            <!-- Messages Stream Container -->
+            <div id="messages-list" class="space-y-3">
+                <!-- Initial Welcome Message from Tola -->
+            </div>
+
+            <!-- Typing Indicator Bubble -->
+            <div id="typing-indicator" class="hidden flex items-start gap-2 message-anim">
+                <img src="logo.jpeg" alt="Tola" class="w-7 h-7 rounded-full border border-brandGold object-cover mt-1"
+                     onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' fill=\'%231A4086\'><circle cx=\'50\' cy=\'50\' r=\'50\'/><text x=\'50%\' y=\'55%\' font-size=\'32\' fill=\'%23D4AF37\' text-anchor=\'middle\' dominant-baseline=\'middle\'>LEP</text></svg>';">
+                <div class="bg-white rounded-2xl rounded-tl-none px-4 py-3 shadow-md border border-slate-200/60 flex items-center gap-1.5">
+                    <span class="text-xs text-slate-500 font-medium mr-1">Tola is typing</span>
+                    <span class="w-1.5 h-1.5 bg-brandNavy rounded-full typing-dot"></span>
+                    <span class="w-1.5 h-1.5 bg-brandGold rounded-full typing-dot"></span>
+                    <span class="w-1.5 h-1.5 bg-brandNavy rounded-full typing-dot"></span>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- QUICK PROMPT SUGGESTION CHIPS -->
+        <div id="quick-prompts" class="shrink-0 bg-[#f0ebe1] border-t border-slate-300/60 px-3 py-2 flex items-center gap-2 overflow-x-auto no-scrollbar">
+            <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider whitespace-nowrap"><i class="fa-solid fa-lightbulb text-brandGold mr-1"></i> Ask Tola:</span>
+            <button onclick="sendQuickPrompt('Tell me about Louis EduPlus Ltd and your founder')" class="shrink-0 bg-white hover:bg-brandGold/10 hover:border-brandGold text-brandNavy-dark text-xs font-medium px-3 py-1.5 rounded-full border border-slate-300 shadow-sm transition-all">
+                🏫 About Louis EduPlus
+            </button>
+            <button onclick="sendQuickPrompt('How can we transform our school from a certificate factory?')" class="shrink-0 bg-white hover:bg-brandGold/10 hover:border-brandGold text-brandNavy-dark text-xs font-medium px-3 py-1.5 rounded-full border border-slate-300 shadow-sm transition-all">
+                📊 School Diagnostic
+            </button>
+            <button onclick="sendQuickPrompt('What teacher training and CPD programs do you offer?')" class="shrink-0 bg-white hover:bg-brandGold/10 hover:border-brandGold text-brandNavy-dark text-xs font-medium px-3 py-1.5 rounded-full border border-slate-300 shadow-sm transition-all">
+                🎓 Teacher Training
+            </button>
+            <button onclick="sendQuickPrompt('Tell me about publications like The Education Shift and Ripples')" class="shrink-0 bg-white hover:bg-brandGold/10 hover:border-brandGold text-brandNavy-dark text-xs font-medium px-3 py-1.5 rounded-full border border-slate-300 shadow-sm transition-all">
+                📚 Books & Publications
+            </button>
+            <button onclick="sendQuickPrompt('How do I contact or consult with Mr. Louis Odubanjo?')" class="shrink-0 bg-white hover:bg-brandGold/10 hover:border-brandGold text-brandNavy-dark text-xs font-medium px-3 py-1.5 rounded-full border border-slate-300 shadow-sm transition-all">
+                📞 Contact & Offices
+            </button>
+        </div>
+
+        <!-- BOTTOM INPUT BAR (Fixed Anchor) -->
+        <footer class="shrink-0 bg-[#f0ebe1] px-3 py-2 border-t border-slate-300/80 relative z-40">
+            <form id="chat-form" onsubmit="handleSend(event)" class="flex items-end gap-2 max-w-4xl mx-auto">
+                
+                <!-- Attachment Button -->
+                <button type="button" onclick="showAttachOptions()" title="Attach document or inquiry" class="p-2.5 text-slate-600 hover:text-brandNavy hover:bg-black/5 rounded-full transition-colors flex-shrink-0 mb-0.5">
+                    <i class="fa-solid fa-paperclip text-lg"></i>
+                </button>
+
+                <!-- Input Field Box -->
+                <div class="flex-1 bg-white rounded-2xl border border-slate-300 shadow-inner px-3.5 py-1.5 flex items-end gap-2 focus-within:border-brandGold transition-all">
+                    
+                    <textarea id="message-input" rows="1" placeholder="Type a message..." required
+                        class="chat-textarea w-full bg-transparent text-slate-800 placeholder-slate-400 text-sm focus:outline-none py-1 selection:bg-brandGold selection:text-brandNavy-dark"
+                        oninput="autoExpandTextarea(this); toggleSendBtn();"
+                        onkeydown="handleKeyDown(event)"></textarea>
+
+                    <button type="button" onclick="toggleEmojiPicker()" title="Emoji" class="text-slate-400 hover:text-slate-600 p-1 flex-shrink-0 mb-0.5">
+                        <i class="fa-regular fa-face-smile text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Submit / Voice Button -->
+                <button type="submit" id="send-btn" class="p-3 bg-brandNavy text-white hover:bg-brandNavy-light rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center flex-shrink-0 mb-0.5 active:scale-95">
+                    <i id="send-icon" class="fa-solid fa-paper-plane text-sm"></i>
+                </button>
+            </form>
+        </footer>
+
+    </div>
+
+    <!-- PROFILE / ABOUT TOLA MODAL -->
+    <div id="profile-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full overflow-hidden shadow-2xl border border-brandGold/30 transform transition-all">
+            <div class="bg-brandNavy-dark p-6 text-center relative">
+                <button onclick="toggleProfileModal()" class="absolute top-4 right-4 text-slate-300 hover:text-white p-1">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+                <img src="logo.jpeg" alt="Tola Profile" class="w-24 h-24 rounded-full mx-auto border-4 border-brandGold object-cover shadow-lg bg-white"
+                     onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' fill=\'%231A4086\'><circle cx=\'50\' cy=\'50\' r=\'50\'/><text x=\'50%\' y=\'55%\' font-size=\'32\' font-weight=\'bold\' fill=\'%23D4AF37\' text-anchor=\'middle\' dominant-baseline=\'middle\'>LEP</text></svg>';">
+                <h2 class="font-serif font-bold text-xl text-white mt-3">Tola</h2>
+                <p class="text-brandGold text-xs font-semibold uppercase tracking-widest mt-0.5">Customer Relations Officer</p>
+                <p class="text-slate-300 text-xs mt-1">Louis EduPlus Ltd</p>
+            </div>
+            
+            <div class="p-6 space-y-4 text-sm text-slate-600">
+                <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-circle-check text-brandGold text-lg mt-0.5"></i>
+                    <div>
+                        <strong class="text-brandNavy-dark block">Purpose</strong>
+                        Assisting educators, school founders, and parents with inquiries on educational transformation, teacher training, and diagnostic assessments.
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-building text-brandGold text-lg mt-0.5"></i>
+                    <div>
+                        <strong class="text-brandNavy-dark block">Consultancy Offices</strong>
+                        • <strong>UK:</strong> 86–90, Paul Street, London EC2A 4NE<br>
+                        • <strong>NG:</strong> Plot 6, Block G, Oyesina Layout, Challenge, Ibadan
+                    </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                    <i class="fa-solid fa-envelope text-brandGold text-lg mt-0.5"></i>
+                    <div>
+                        <strong class="text-brandNavy-dark block">Direct Email</strong>
+                        <a href="mailto:info@louiseduplusltd.com" class="text-brandNavy hover:underline">info@louiseduplusltd.com</a>
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <a href="index.html" class="block w-full text-center py-2.5 bg-brandNavy text-white font-bold text-xs uppercase tracking-widest rounded-xl hover:bg-brandNavy-dark transition-colors">
+                        Visit Main Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ATTACHMENT MODAL / INFO -->
+    <div id="attach-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-end justify-center sm:items-center p-4">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-5 space-y-4 shadow-2xl">
+            <div class="flex items-center justify-between border-b pb-3">
+                <h3 class="font-bold text-brandNavy-dark">Attach Document or Inquiry</h3>
+                <button onclick="showAttachOptions()" class="text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <p class="text-xs text-slate-500">Select the topic you wish to send details or request documents for:</p>
+            <div class="grid grid-cols-2 gap-3">
+                <button onclick="attachTopic('School Diagnostic Inquiry')" class="p-3 bg-paper border border-slate-200 rounded-xl hover:border-brandGold text-left">
+                    <i class="fa-solid fa-chart-line text-brandNavy text-lg mb-1 block"></i>
+                    <span class="text-xs font-bold block text-slate-800">Diagnostic</span>
+                    <span class="text-[10px] text-slate-500">School Assessment</span>
+                </button>
+                <button onclick="attachTopic('Teacher CPD Proposal')" class="p-3 bg-paper border border-slate-200 rounded-xl hover:border-brandGold text-left">
+                    <i class="fa-solid fa-chalkboard-user text-brandNavy text-lg mb-1 block"></i>
+                    <span class="text-xs font-bold block text-slate-800">Teacher CPD</span>
+                    <span class="text-[10px] text-slate-500">Training Proposal</span>
+                </button>
+                <button onclick="attachTopic('Book Order - The Education Shift')" class="p-3 bg-paper border border-slate-200 rounded-xl hover:border-brandGold text-left">
+                    <i class="fa-solid fa-book text-brandNavy text-lg mb-1 block"></i>
+                    <span class="text-xs font-bold block text-slate-800">Book Order</span>
+                    <span class="text-[10px] text-slate-500">Publications</span>
+                </button>
+                <button onclick="attachTopic('Founder Consultation Request')" class="p-3 bg-paper border border-slate-200 rounded-xl hover:border-brandGold text-left">
+                    <i class="fa-solid fa-handshake text-brandNavy text-lg mb-1 block"></i>
+                    <span class="text-xs font-bold block text-slate-800">Consultation</span>
+                    <span class="text-[10px] text-slate-500">Direct Meeting</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN SCRIPT LOGIC -->
+    <script>
+        const WEBHOOK_URL = 'https://fancy-dolphin-76.ash-2.instapods.app/webhook/tola-website-widget';
+        
+        let messages = [];
+        let searchResults = [];
+        let currentSearchIndex = -1;
+        let isWaitingForResponse = false;
+
+        // Initialize Session User ID
+        let sessionId = localStorage.getItem('lep_chat_session_id');
+        if (!sessionId) {
+            sessionId = 'user_' + Math.random().toString(36).substring(2, 9) + '_' + Date.now();
+            localStorage.setItem('lep_chat_session_id', sessionId);
+        }
+
+        // DOM Elements
+        const chatContainer = document.getElementById('chat-container');
+        const messagesList = document.getElementById('messages-list');
+        const messageInput = document.getElementById('message-input');
+        const typingIndicator = document.getElementById('typing-indicator');
+        const statusText = document.getElementById('status-text');
+
+        // Initial Greeting on Load
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedChat = localStorage.getItem('lep_chat_history');
+            if (savedChat) {
+                try {
+                    messages = JSON.parse(savedChat);
+                    renderAllMessages();
+                } catch(e) {
+                    initDefaultGreeting();
+                }
+            } else {
+                initDefaultGreeting();
+            }
+
+            // Scroll to bottom
+            scrollToBottom();
+            
+            // Set current time header
+            const now = new Date();
+            document.getElementById('chat-start-time').innerText = now.toLocaleDateString([], { weekday: 'short', month: 'short', day: 'numeric' });
+        });
+
+        function initDefaultGreeting() {
+            const welcomeText = "Hello! 👋 I'm **Tola**, the Customer Relations Officer at **Louis EduPlus Ltd**.\n\nWe specialize in transforming schools from simple *certificate factories* into true **Transformation Centres** of competence, character, and vision.\n\nHow can I assist you today?";
+            
+            const initialButtons = [
+                { label: " Take Diagnostic Test", action: "Tell me about the School Diagnostic Assessment" },
+                { label: " Teacher Training (CPD)", action: "What teacher training services do you offer?" },
+                { label: " Books & Publications", action: "Tell me about Louis Odubanjo's books" },
+                { label: " Contact Offices", action: "Where are your offices located?" }
+            ];
+
+            addMessage('bot', welcomeText, initialButtons);
+        }
+
+        // Expandable textarea logic (max 4 lines preview)
+        function autoExpandTextarea(textarea) {
+            textarea.style.height = 'auto';
+            const newHeight = Math.min(textarea.scrollHeight, 120); // max height cap approx 4 lines
+            textarea.style.height = newHeight + 'px';
+        }
+
+        function handleKeyDown(event) {
+            // Enter key sends, Shift+Enter creates a new line
+            if (event.key === 'Enter' && !event.shiftKey) {
+                event.preventDefault();
+                document.getElementById('chat-form').dispatchEvent(new Event('submit'));
+            }
+        }
+
+        function toggleSendBtn() {
+            // Can be expanded to toggle voice icon if empty
+        }
+
+        // Handle sending messages
+        async function handleSend(e) {
+            if (e) e.preventDefault();
+            const text = messageInput.value.trim();
+            if (!text || isWaitingForResponse) return;
+
+            // Reset Input
+            messageInput.value = '';
+            messageInput.style.height = 'auto';
+
+            // Hide quick prompts after user starts typing active conversation
+            document.getElementById('quick-prompts').classList.add('hidden');
+
+            // Append User Message
+            addMessage('user', text);
+
+            // Show Typing Indicator
+            showTyping(true);
+
+            // Fetch Response from Webhook
+            try {
+                const response = await fetchWithRetry(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: text,
+                        sessionId: sessionId,
+                        timestamp: new Date().toISOString()
+                    })
+                });
+
+                showTyping(false);
+
+                if (response && response.ok) {
+                    const data = await response.json();
+                    
+                    // Parse Tola's response text and any dynamic buttons/links
+                    let botReply = "";
+                    let buttons = [];
+
+                    if (typeof data === 'string') {
+                        botReply = data;
+                    } else if (data.reply || data.output || data.message || data.text) {
+                        botReply = data.reply || data.output || data.message || data.text;
+                        buttons = data.buttons || data.quick_replies || [];
+                    } else if (Array.isArray(data) && data[0]?.text) {
+                        botReply = data[0].text;
+                        buttons = data[0].buttons || [];
+                    } else {
+                        botReply = JSON.stringify(data);
+                    }
+
+                    // Extract clickable markdown buttons if structured in response text
+                    const extracted = extractButtonsFromText(botReply);
+                    botReply = extracted.cleanText;
+                    if (extracted.buttons.length > 0) {
+                        buttons = buttons.concat(extracted.buttons);
+                    }
+
+                    addMessage('bot', botReply, buttons);
+
+                } else {
+                    // Fallback friendly AI bot response if webhook endpoint is unreachable or returning standard format
+                    const fallbackReply = getFallbackResponse(text);
+                    addMessage('bot', fallbackReply.text, fallbackReply.buttons);
+                }
+
+            } catch (err) {
+                console.error('Webhook request failed:', err);
+                showTyping(false);
+                
+                // Fallback graceful handler
+                const fallbackReply = getFallbackResponse(text);
+                addMessage('bot', fallbackReply.text, fallbackReply.buttons);
+            }
+        }
+
+        // Exponential backoff retry handler
+        async function fetchWithRetry(url, options, retries = 3, backoff = 1000) {
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const res = await fetch(url, options);
+                    if (res.ok) return res;
+                } catch (e) {
+                    if (i === retries - 1) throw e;
+                }
+                await new Promise(r => setTimeout(r, backoff * Math.pow(2, i)));
+            }
+        }
+
+        // Helper: Extract formatted action buttons inside message text like [Button: Text]
+        function extractButtonsFromText(text) {
+            let buttons = [];
+            let cleanText = text.replace(/\[button:(.*?)\]/gi, (match, p1) => {
+                buttons.push({ label: p1.trim(), action: p1.trim() });
+                return '';
+            });
+            return { cleanText: cleanText.trim(), buttons };
+        }
+
+        // Local knowledge fallback engine when offline or webhook cold-starting
+        function getFallbackResponse(input) {
+            const lower = input.toLowerCase();
+            
+            if (lower.includes('diagnostic') || lower.includes('certificate factory') || lower.includes('test') || lower.includes('quiz')) {
+                return {
+                    text: "Our **School Diagnostic Assessment** helps leaders determine if their institution is functioning as a *Certificate Factory* or a *Transformation Centre*.\n\nIt evaluates 5 key areas:\n1. Metric & Success Drivers\n2. Continuous Teacher CPD\n3. Parent Involvement & Mentoring\n4. Values & Ethics Integration\n5. Long-term Kingdom & Vision Impact\n\nWould you like to speak directly with our team or view our services?",
+                    buttons: [
+                        { label: " View Services", action: "Tell me about your services" },
+                        { label: " Contact Team", action: "How do I contact Louis EduPlus?" }
+                    ]
+                };
+            } else if (lower.includes('teacher') || lower.includes('cpd') || lower.includes('training')) {
+                return {
+                    text: "Louis EduPlus offers specialized **Teacher Training & Continuous Professional Development (CPD)**.\n\nWe move beyond standard compliance templates to instruct educators in active inquiry design, reflective practice, cognitive mastery, and faith-values alignment.",
+                    buttons: [
+                        { label: " Request CPD Proposal", action: "I want to request a Teacher Training proposal" }
+                    ]
+                };
+            } else if (lower.includes('book') || lower.includes('publication') || lower.includes('shift') || lower.includes('ripples')) {
+                return {
+                    text: "Key publications by founder **Louis Odubanjo, M.Ed., MCCT**:\n\n1. 📖 **The Education Shift**: A rigorous blueprint for institutional transformation.\n2. 📘 **Ripples in Teacher Education**: Shaping instruction that echoes across intercultural settings.\n3. 📙 **ComforMIX**: Studying institutional goals when meeting human diversity.",
+                    buttons: [
+                        { label: " Order Books Info", action: "How can I order these books?" }
+                    ]
+                };
+            } else if (lower.includes('contact') || lower.includes('office') || lower.includes('email') || lower.includes('address') || lower.includes('phone')) {
+                return {
+                    text: "📍 **Global Consultative Offices**:\n\n• **United Kingdom:**\n86–90, Paul Street, London EC2A 4NE\n\n• **Nigeria Hub:**\nPlot 6, Block G, Oyesina Layout, Felele, Challenge, Ibadan, Oyo State\n\n• **P. O. Box:** 40972, Dugbe, Ibadan\n• **Phone:** +44 7784 774950\n• **Email:** info@louiseduplusltd.com",
+                    buttons: [
+                        { label: " Send Direct Email", action: "mailto:info@louiseduplusltd.com" }
+                    ]
+                };
+            }
+
+            return {
+                text: "Thank you for reaching out! Louis EduPlus Ltd is dedicated to restructuring schools into transformation centres through teacher CPD, curriculum design, and strategic consulting.\n\nHow else can I assist you?",
+                buttons: [
+                    { label: " School Diagnostic", action: "Tell me about the School Diagnostic" },
+                    { label: " Contact Info", action: "Show me your contact details" }
+                ]
+            };
+        }
+
+        // Add message bubble to stream
+        function addMessage(sender, text, buttons = []) {
+            const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            
+            const msgObj = {
+                id: 'msg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 4),
+                sender,
+                text,
+                buttons,
+                time: timeStr
+            };
+
+            messages.push(msgObj);
+            saveChatHistory();
+
+            appendMessageToDOM(msgObj);
+            scrollToBottom();
+        }
+
+        // Append message markup to DOM
+        function appendMessageToDOM(msg) {
+            const isUser = msg.sender === 'user';
+            
+            const wrapper = document.createElement('div');
+            wrapper.className = `flex flex-col ${isUser ? 'items-end' : 'items-start'} message-anim`;
+            wrapper.id = msg.id;
+
+            const formattedText = formatMessageText(msg.text);
+
+            let buttonsHtml = '';
+            if (msg.buttons && msg.buttons.length > 0) {
+                buttonsHtml = `<div class="mt-2.5 pt-2 border-t border-slate-200/60 space-y-1.5 flex flex-col">`;
+                msg.buttons.forEach(btn => {
+                    if (btn.action && btn.action.startsWith('mailto:')) {
+                        buttonsHtml += `
+                            <a href="${btn.action}" class="w-full text-center bg-brandNavy text-white hover:bg-brandNavy-dark text-xs font-semibold py-2 px-3 rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+                                <i class="fa-solid fa-envelope"></i> ${escapeHtml(btn.label)}
+                            </a>`;
+                    } else if (btn.action && (btn.action.startsWith('http://') || btn.action.startsWith('https://'))) {
+                        buttonsHtml += `
+                            <a href="${btn.action}" target="_blank" rel="noopener" class="w-full text-center bg-brandNavy text-white hover:bg-brandNavy-dark text-xs font-semibold py-2 px-3 rounded-lg transition-colors flex items-center justify-center gap-1.5 shadow-sm">
+                                <i class="fa-solid fa-up-right-from-square"></i> ${escapeHtml(btn.label)}
+                            </a>`;
+                    } else {
+                        buttonsHtml += `
+                            <button onclick="sendQuickPrompt('${escapeJsString(btn.action || btn.label)}')" class="w-full text-left bg-brandGold/15 hover:bg-brandGold/30 text-brandNavy-dark text-xs font-bold py-2 px-3 rounded-lg border border-brandGold/40 transition-all flex items-center justify-between">
+                                <span>${escapeHtml(btn.label)}</span>
+                                <i class="fa-solid fa-chevron-right text-[10px] text-brandGold-shadow"></i>
+                            </button>`;
+                    }
+                });
+                buttonsHtml += `</div>`;
+            }
+
+            if (isUser) {
+                wrapper.innerHTML = `
+                    <div class="max-w-[85%] sm:max-w-[75%] bg-[#dcf8c6] text-slate-900 rounded-2xl rounded-tr-none px-3.5 py-2.5 shadow-sm border border-emerald-200/60 relative group">
+                        <div class="text-sm font-sans leading-relaxed whitespace-pre-wrap break-words">${formattedText}</div>
+                        <div class="text-[10px] text-emerald-800/70 text-right mt-1 flex items-center justify-end gap-1 font-mono">
+                            <span>${msg.time}</span>
+                            <i class="fa-solid fa-check-double text-emerald-600 text-[11px]"></i>
+                        </div>
+                    </div>
+                `;
+            } else {
+                wrapper.innerHTML = `
+                    <div class="flex items-start gap-2 max-w-[88%] sm:max-w-[80%]">
+                        <img src="logo.jpeg" alt="Tola" class="w-7 h-7 rounded-full border border-brandGold object-cover mt-1 shrink-0 shadow-sm"
+                             onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\' fill=\'%231A4086\'><circle cx=\'50\' cy=\'50\' r=\'50\'/><text x=\'50%\' y=\'55%\' font-size=\'32\' fill=\'%23D4AF37\' text-anchor=\'middle\' dominant-baseline=\'middle\'>LEP</text></svg>';">
+                        <div class="bg-white text-slate-800 rounded-2xl rounded-tl-none px-4 py-3 shadow-md border border-slate-200/80 relative">
+                            <span class="text-[11px] font-bold text-brandNavy block mb-0.5">Tola</span>
+                            <div class="text-sm font-sans leading-relaxed break-words msg-body">${formattedText}</div>
+                            ${buttonsHtml}
+                            <div class="text-[10px] text-slate-400 text-right mt-1 font-mono">
+                                ${msg.time}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            messagesList.appendChild(wrapper);
+        }
+
+        // Quick button trigger
+        function sendQuickPrompt(promptText) {
+            messageInput.value = promptText;
+            handleSend();
+        }
+
+        // Rich formatting for Bot text (Markdown bold, italic, links, lists)
+        function formatMessageText(text) {
+            if (!text) return '';
+            
+            let html = escapeHtml(text);
+
+            // Bold **text**
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            // Italic *text*
+            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            
+            // Format HTTP/HTTPS links into clickable anchors
+            const urlRegex = /(https?:\/\/[^\s<]+)/g;
+            html = html.replace(urlRegex, (url) => {
+                return `<a href="${url}" target="_blank" rel="noopener" class="text-brandNavy font-semibold underline hover:text-brandGold transition-colors break-all"><i class="fa-solid fa-link text-xs mr-0.5"></i>${url}</a>`;
+            });
+
+            // Convert bullet points
+            html = html.replace(/^• (.*$)/gim, '<span class="inline-block pl-2">• $1</span>');
+
+            return html;
+        }
+
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        function escapeJsString(str) {
+            return str.replace(/'/g, "\\'").replace(/"/g, '\\"');
+        }
+
+        function showTyping(show) {
+            isWaitingForResponse = show;
+            if (show) {
+                typingIndicator.classList.remove('hidden');
+                statusText.innerHTML = `<span class="inline-block w-1.5 h-1.5 bg-brandGold rounded-full animate-ping"></span> typing...`;
+                scrollToBottom();
+            } else {
+                typingIndicator.classList.add('hidden');
+                statusText.innerHTML = `<span class="inline-block w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span> online • Customer Relations Officer`;
+            }
+        }
+
+        function scrollToBottom() {
+            setTimeout(() => {
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }, 50);
+        }
+
+        function saveChatHistory() {
+            try {
+                localStorage.setItem('lep_chat_history', JSON.stringify(messages));
+            } catch(e) {
+                console.warn('LocalStorage full or restricted');
+            }
+        }
+
+        function renderAllMessages() {
+            messagesList.innerHTML = '';
+            messages.forEach(msg => appendMessageToDOM(msg));
+        }
+
+        function clearChatConfirm() {
+            if (confirm('Are you sure you want to clear this conversation with Tola?')) {
+                messages = [];
+                localStorage.removeItem('lep_chat_history');
+                messagesList.innerHTML = '';
+                document.getElementById('quick-prompts').classList.remove('hidden');
+                initDefaultGreeting();
+            }
+        }
+
+        // IN-CHAT SEARCH FUNCTIONALITY
+        function toggleSearch() {
+            const searchHeader = document.getElementById('header-search');
+            const searchInput = document.getElementById('search-input');
+            
+            if (searchHeader.classList.contains('hidden')) {
+                searchHeader.classList.remove('hidden');
+                searchInput.focus();
+            } else {
+                searchHeader.classList.add('hidden');
+                clearSearch();
+            }
+        }
+
+        function performSearch() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            const countSpan = document.getElementById('search-count');
+            
+            clearSearchHighlights();
+            searchResults = [];
+            currentSearchIndex = -1;
+
+            if (!query) {
+                countSpan.innerText = '';
+                return;
+            }
+
+            // Loop messages and highlight
+            messages.forEach(msg => {
+                if (msg.text.toLowerCase().includes(query)) {
+                    searchResults.push(msg.id);
+                    highlightMessageText(msg.id, query);
+                }
+            });
+
+            if (searchResults.length > 0) {
+                currentSearchIndex = searchResults.length - 1; // Jump to latest match
+                countSpan.innerText = `${currentSearchIndex + 1}/${searchResults.length}`;
+                jumpToSearchResult();
+            } else {
+                countSpan.innerText = '0/0';
+            }
+        }
+
+        function highlightMessageText(msgId, query) {
+            const el = document.getElementById(msgId);
+            if (!el) return;
+            const textEl = el.querySelector('.msg-body, .font-sans');
+            if (!textEl) return;
+
+            const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+            textEl.innerHTML = textEl.innerHTML.replace(regex, '<mark class="search-highlight">$1</mark>');
+        }
+
+        function clearSearchHighlights() {
+            document.querySelectorAll('mark.search-highlight, mark.search-highlight-active').forEach(mark => {
+                const parent = mark.parentNode;
+                parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                parent.normalize();
+            });
+        }
+
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('search-count').innerText = '';
+            clearSearchHighlights();
+            searchResults = [];
+            currentSearchIndex = -1;
+        }
+
+        function navigateSearch(direction) {
+            if (searchResults.length === 0) return;
+            currentSearchIndex += direction;
+            if (currentSearchIndex < 0) currentSearchIndex = searchResults.length - 1;
+            if (currentSearchIndex >= searchResults.length) currentSearchIndex = 0;
+
+            document.getElementById('search-count').innerText = `${currentSearchIndex + 1}/${searchResults.length}`;
+            jumpToSearchResult();
+        }
+
+        function jumpToSearchResult() {
+            const msgId = searchResults[currentSearchIndex];
+            const el = document.getElementById(msgId);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Highlight active mark
+                document.querySelectorAll('mark.search-highlight-active').forEach(m => m.classList.replace('search-highlight-active', 'search-highlight'));
+                const marks = el.querySelectorAll('mark.search-highlight');
+                marks.forEach(m => m.classList.replace('search-highlight', 'search-highlight-active'));
+            }
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // Modals & Attachments
+        function toggleProfileModal() {
+            const modal = document.getElementById('profile-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function showAttachOptions() {
+            const modal = document.getElementById('attach-modal');
+            modal.classList.toggle('hidden');
+        }
+
+        function attachTopic(topicTitle) {
+            showAttachOptions();
+            sendQuickPrompt(`I am interested in: ${topicTitle}. Can you provide more details?`);
+        }
+
+        function toggleEmojiPicker() {
+            // Append quick emoji to message input
+            const emojis = ['👍', '🏫', '📚', '✝️', '📊', '🙏'];
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            messageInput.value += ' ' + randomEmoji;
+            autoExpandTextarea(messageInput);
+            messageInput.focus();
+        }
+    </script>
+</body>
+</html>
+
