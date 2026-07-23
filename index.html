@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -98,8 +99,6 @@
                         </a>
                     </div>
                 </div>
-
-                
 
             </div>
         </div>
@@ -375,6 +374,23 @@
         </div>
     </section>
 
+    <!-- FLOATING CHAT / INQUIRY WIDGET BUTTON -->
+    <a href="inquiries.html" 
+       aria-label="Send Inquiry"
+       class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-brandNavy-dark text-white rounded-full shadow-lg border border-brandGold/30 hover:border-brandGold hover:bg-brandNavy hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1">
+        <div class="relative flex items-center justify-center w-7 h-7 rounded-full bg-brandGold/20 text-brandGold group-hover:bg-brandGold group-hover:text-brandNavy-dark transition-colors">
+            <i class="fa-regular fa-comment-dots text-base"></i>
+            <!-- Gentle Status Indicator Dot -->
+            <span class="absolute -top-0.5 -right-0.5 flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandGold opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-brandGold"></span>
+            </span>
+        </div>
+        <span class="text-xs font-semibold uppercase tracking-wider pr-1 text-slate-100 group-hover:text-white">
+            Inquire Now
+        </span>
+    </a>
+
     <!-- Injected Navigation Footer -->
     <div id="footer-placeholder"></div>
 
@@ -526,3 +542,24 @@
     </script>
 </body>
 </html>
+
+<!--### Where to place the code snippet
+If you only want to insert the specific code snippet manually into your existing file, place it **right above <div id="footer-placeholder"></div>** near the bottom of the <body>:
+
+<!-- FLOATING CHAT / INQUIRY WIDGET BUTTON -->
+<a href="inquiries.html" 
+   aria-label="Send Inquiry"
+   class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 bg-brandNavy-dark text-white rounded-full shadow-lg border border-brandGold/30 hover:border-brandGold hover:bg-brandNavy hover:shadow-2xl transition-all duration-300 group hover:-translate-y-1">
+    <div class="relative flex items-center justify-center w-7 h-7 rounded-full bg-brandGold/20 text-brandGold group-hover:bg-brandGold group-hover:text-brandNavy-dark transition-colors">
+        <i class="fa-regular fa-comment-dots text-base"></i>
+        <!-- Gentle Status Indicator Dot -->
+        <span class="absolute -top-0.5 -right-0.5 flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brandGold opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-brandGold"></span>
+        </span>
+    </div>
+    <span class="text-xs font-semibold uppercase tracking-wider pr-1 text-slate-100 group-hover:text-white">
+        Inquire Now
+    </span>
+</a>
+
